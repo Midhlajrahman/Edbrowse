@@ -102,7 +102,7 @@ License: copyright commercial
   --container-width: 1200px;
   --small-container-width: 1000px;
   --large-container-width: 1550px;
-  --container-pt: 120px;
+  --container-pt: 60px;
   --container-pb: 120px;
 }
 
@@ -335,7 +335,7 @@ section > .container-fluid {
   height: calc(2.25rem + 27px);
   padding: 14px 30px;
   outline: 0;
-  background-color: #f4f5f8;
+  background-color: #e1e1e161;
   border: 1px solid #f4f5f8;
   color: #686a6f;
   font-size: 0.9rem;

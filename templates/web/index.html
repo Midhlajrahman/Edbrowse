@@ -177,7 +177,7 @@
 			<div class="sec-title">
 				<span class="sub-title">Our Services</span>
 				<h2>Get the Immigration <br> Trainings you <span class="color3">Deserve</span></h2>
-				<a href="#" class="theme-btn btn-style-two">Discover More</a>
+				<a href="{% url 'web:services' %}" class="theme-btn btn-style-two">Discover More</a>
 			</div>
 
 			<div class="carousel-outer">
@@ -270,7 +270,7 @@
 <!--End Countries Section Two -->
 
 <!-- Clients Section   -->
-<section class="clients-section">
+{% comment %} <section class="clients-section">
     <div class="auto-container">
         <!-- Sponsors Outer -->
         <div class="sponsors-outer">
@@ -286,7 +286,7 @@
             </ul>
         </div>
     </div>
-</section>
+</section> {% endcomment %}
 <!--End Clients Section -->
 
 <!-- Gallery Section -->
@@ -321,156 +321,30 @@
     <div class="auto-container">
         <div class="sec-title text-center light">
             <span class="sub-title">our testimonials</span>
-            <h2>What they’re talking about<br>the <span class="color3">consultancy</span></h2>
+            <h2>What they’re talking about<br>the <span class="color3">Edbrowse</span></h2>
         </div>
         
         <div class="carousel-outer">
             <div class="testimonial-carousel owl-carousel owl-theme">
+              
                 <!-- Testimonial Block -->
+                {% for testimonial in testimonials %}
                 <div class="testimonial-block">
                     <div class="inner-box">
                         <div class="content-box">
                             <span class="icon fa fa-quote-left"></span>
                             <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                            <div class="text">I was very impresed by the remons service lorem ipsum is simply free text used by copy typing refreshing. Neque porro est qui dolorem ipsum quia.</div>
+                            <div class="text">{{testimonial.description}}</div>
                         </div>
                         <div class="info-box">
-                            <figure class="thumb"><img src="{% static 'web/images/resource/testi-thumb-1.jpg' %}" alt=""></figure>
-                            <h6 class="name">Jessica Brown</h6>
-                            <span class="designation">Customer</span>
+                            <figure class="thumb"><img src="{{testimonial.photo.url}}" alt=""></figure>
+                            <h6 class="name">{{testimonial.name}}</h6>
+                            <span class="designation">{{testimonial.designation}}</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Testimonial Block -->
-                <div class="testimonial-block">
-                    <div class="inner-box">
-                        <div class="content-box">
-                            <span class="icon fa fa-quote-left"></span>
-                            <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                            <div class="text">I was very impresed by the remons service lorem ipsum is simply free text used by copy typing refreshing. Neque porro est qui dolorem ipsum quia.</div>
-                        </div>
-                        <div class="info-box">
-                            <figure class="thumb"><img src="{% static 'web/images/resource/testi-thumb-2.jpg' %}" alt=""></figure>
-                            <h6 class="name">Kevin Martin</h6>
-                            <span class="designation">Customer</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial Block -->
-                <div class="testimonial-block">
-                    <div class="inner-box">
-                        <div class="content-box">
-                            <span class="icon fa fa-quote-left"></span>
-                            <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                            <div class="text">I was very impresed by the remons service lorem ipsum is simply free text used by copy typing refreshing. Neque porro est qui dolorem ipsum quia.</div>
-                        </div>
-                        <div class="info-box">
-                            <figure class="thumb"><img src="{% static 'web/images/resource/testi-thumb-3.jpg' %}" alt=""></figure>
-                            <h6 class="name">Sarah Albert</h6>
-                            <span class="designation">Customer</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial Block -->
-                <div class="testimonial-block">
-                    <div class="inner-box">
-                        <div class="content-box">
-                            <span class="icon fa fa-quote-left"></span>
-                            <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                            <div class="text">I was very impresed by the remons service lorem ipsum is simply free text used by copy typing refreshing. Neque porro est qui dolorem ipsum quia.</div>
-                        </div>
-                        <div class="info-box">
-                            <figure class="thumb"><img src="{% static 'web/images/resource/testi-thumb-1.jpg' %}" alt=""></figure>
-                            <h6 class="name">Jessica Brown</h6>
-                            <span class="designation">Customer</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial Block -->
-                <div class="testimonial-block">
-                    <div class="inner-box">
-                        <div class="content-box">
-                            <span class="icon fa fa-quote-left"></span>
-                            <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                            <div class="text">I was very impresed by the remons service lorem ipsum is simply free text used by copy typing refreshing. Neque porro est qui dolorem ipsum quia.</div>
-                        </div>
-                        <div class="info-box">
-                            <figure class="thumb"><img src="{% static 'web/images/resource/testi-thumb-2.jpg' %}" alt=""></figure>
-                            <h6 class="name">Kevin Martin</h6>
-                            <span class="designation">Customer</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial Block -->
-                <div class="testimonial-block">
-                    <div class="inner-box">
-                        <div class="content-box">
-                            <span class="icon fa fa-quote-left"></span>
-                            <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                            <div class="text">I was very impresed by the remons service lorem ipsum is simply free text used by copy typing refreshing. Neque porro est qui dolorem ipsum quia.</div>
-                        </div>
-                        <div class="info-box">
-                            <figure class="thumb"><img src="{% static 'web/images/resource/testi-thumb-3.jpg' %}" alt=""></figure>
-                            <h6 class="name">Sarah Albert</h6>
-                            <span class="designation">Customer</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial Block -->
-                <div class="testimonial-block">
-                    <div class="inner-box">
-                        <div class="content-box">
-                            <span class="icon fa fa-quote-left"></span>
-                            <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                            <div class="text">I was very impresed by the remons service lorem ipsum is simply free text used by copy typing refreshing. Neque porro est qui dolorem ipsum quia.</div>
-                        </div>
-                        <div class="info-box">
-                            <figure class="thumb"><img src="{% static 'web/images/resource/testi-thumb-1.jpg' %}" alt=""></figure>
-                            <h6 class="name">Jessica Brown</h6>
-                            <span class="designation">Customer</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial Block -->
-                <div class="testimonial-block">
-                    <div class="inner-box">
-                        <div class="content-box">
-                            <span class="icon fa fa-quote-left"></span>
-                            <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                            <div class="text">I was very impresed by the remons service lorem ipsum is simply free text used by copy typing refreshing. Neque porro est qui dolorem ipsum quia.</div>
-                        </div>
-                        <div class="info-box">
-                            <figure class="thumb"><img src="{% static 'web/images/resource/testi-thumb-2.jpg' %}" alt=""></figure>
-                            <h6 class="name">Kevin Martin</h6>
-                            <span class="designation">Customer</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial Block -->
-                <div class="testimonial-block">
-                    <div class="inner-box">
-                        <div class="content-box">
-                            <span class="icon fa fa-quote-left"></span>
-                            <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                            <div class="text">I was very impresed by the remons service lorem ipsum is simply free text used by copy typing refreshing. Neque porro est qui dolorem ipsum quia.</div>
-                        </div>
-                        <div class="info-box">
-                            <figure class="thumb"><img src="{% static 'web/images/resource/testi-thumb-3.jpg' %}" alt=""></figure>
-                            <h6 class="name">Sarah Albert</h6>
-                            <span class="designation">Customer</span>
-                        </div>
-                    </div>
-                </div>
-
-
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -489,20 +363,16 @@
                         <div class="sec-title">
                             <span class="sub-title">contact with us</span>
                             <h2>Book your <span class="color3">consultation</span></h2>
-                            <div class="text">There cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs condmentum leo massa mollis.</div>
+                            <div class="text">At Edbrowse, we understand that navigating the complex world of studying abroad can be both exciting and challenging. With over 13 years of experience, we've been dedicated to guiding students toward their educational dreams.</div>
                         </div>
 
                         <ul class="list-style-two">
-                            <li><i class="fa fa-check-circle"></i> Making this the first true generator on the Internet</li>
-                            <li><i class="fa fa-check-circle"></i> Lorem Ipsum is not simply random text</li>
-                            <li><i class="fa fa-check-circle"></i> If you are going to use a passage</li>
+                            <li><i class="fa fa-check-circle"></i>Guaranteed Admission in Top Colleges and Universities</li>
+                            <li><i class="fa fa-check-circle"></i> Visa Guidance and Processing </li>
+                            <li><i class="fa fa-check-circle"></i> Immigration and Settlement Services</li>
                         </ul>
                         
-                        <div class="ceo-info">
-                            <figure class="thumb"><img src="{% static 'web/images/resource/ceo-thumb.jpg' %}" alt=""></figure>
-                            <h6 class="name">Aleesha Brown</h6>
-                            <div class="designation">CEO & CO Founder</div>
-                        </div>
+                        
                     </div>
                 </div>
 
@@ -514,17 +384,26 @@
                             <!-- Contact Form -->
                             <div class="contact-form wow fadeInLeft">
                                 <!--Contact Form-->
-                                <form method="post" id="contact-form">
+                                <form method="post" id="contact-form" class="form contact" >
+                                    {% csrf_token %}
                                     <div class="form-group">
-                                        <input type="text" name="full_name" placeholder="Your Name" required>
+                                        {{form.name}}   
                                     </div>
                         
                                     <div class="form-group">
-                                        <input type="text" name="Email" placeholder="Email Address" required>
+                                        {{form.email}}
                                     </div>
 
                                     <div class="form-group">
-                                        <textarea name="message" placeholder="Write a Message" required></textarea>
+                                        {{form.phone}}
+                                    </div>
+
+                                    <div class="form-group">
+                                        {{form.subject}}
+                                    </div>
+
+                                    <div class="form-group">
+                                        {{form.message}}
                                     </div>
                     
                                     <div class="form-group">
@@ -577,7 +456,7 @@
 
 
 	<!--Start Services Details-->
-	<section class="services-details">
+<section class="services-details">
 		<div class="container">
 			<div class="row">
 				
@@ -586,27 +465,53 @@
 					<div class="services-details__content">
 						<div class=" mt-25">
 							<h3>Frequently Asked Question</h3>
-							<p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+							<p></p>
 							<ul class="accordion-box wow fadeInRight">
 								<!--Block-->
 								<li class="accordion block active-block">
-									<div class="acc-btn active">How to soft launch your business?
+									<div class="acc-btn active">What services does Edbrowse provide?
+
 										<div class="icon fa fa-plus"></div>
 									</div>
 									<div class="acc-content current">
 										<div class="content">
-											<div class="text">There are many variations of passages the majority have suffered alteration in some fo injected humour, or randomised words believable.</div>
+											<div class="text">Edbrowse offers a range of services, including academic guidance, university selection, visa assistance, accommodation support, job placement, and comprehensive support throughout the entire study abroad journey.</div>
 										</div>
 									</div>
 								</li>
 								<!--Block-->
 								<li class="accordion block">
-									<div class="acc-btn">Is my technology allowed on tech?
+									<div class="acc-btn">How experienced is Edbrowse in the field of overseas education consultancy?
 										<div class="icon fa fa-plus"></div>
 									</div>
 									<div class="acc-content">
 										<div class="content">
-											<div class="text">There are many variations of passages the majority have suffered alteration in some fo injected humour, or randomised words believable.</div>
+											<div class="text">Edbrowse boasts over 13 years of experience, making us a trusted and knowledgeable partner in guiding students toward their educational dreams.</div>
+										</div>
+									</div>
+								</li>
+                                <li class="accordion block">
+									<div class="acc-btn">How does Edbrowse assist with university selection?
+
+										<div class="icon fa fa-plus"></div>
+									</div>
+									<div class="acc-content">
+										<div class="content">
+											<div class="text">Our experienced counselors help you choose the right courses and universities based on your academic goals and career aspirations. We leverage our global network to provide a diverse range of education options.
+                                            </div>
+										</div>
+									</div>
+								</li>
+                                <li class="accordion block">
+									<div class="acc-btn"> What countries does Edbrowse cover for study abroad opportunities?
+
+										<div class="icon fa fa-plus"></div>
+									</div>
+									<div class="acc-content">
+										<div class="content">
+											<div class="text">Edbrowse has established strong relationships with universities worldwide, offering a wide range of education options. Our global reach includes countries across the Americas, Europe, Asia, and beyond.
+
+                                            </div>
 										</div>
 									</div>
 								</li>

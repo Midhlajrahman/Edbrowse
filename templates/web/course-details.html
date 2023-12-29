@@ -24,7 +24,7 @@
 	<section class="blog-details">
 		<div class="container">
 			<div class="row">
-				<div class="col-xl-8 col-lg-7">
+				<div class="col-xl-7 col-lg-7">
 					<div class="blog-details__left">
 	
 						<div class="blog-details__img">
@@ -38,53 +38,105 @@
 	
 					</div>
 				</div>
-				<div class="col-xl-4 col-lg-5">
+				<div class="col-xl-5 col-lg-5">
 					<div class="sidebar">
 						
 						<div class="sidebar__single sidebar__post">
 							<h3 class="sidebar__title">Enquiry Form</h3>
 							<!-- Contact Form -->
-						<form id="contact_form" name="contact_form" class="" method="post">
-							<div class="row">
-								
-								<div class="col-sm-6">
-									<div class="mb-3">
-										<input name="form_name" class="form-control" type="text" placeholder="Name">
+							<form id="contact_form" name="contact_form" class="form course" method="post">
+								{% csrf_token %}
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="mb-3">
+											{{ form.full_name }}
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="mb-3">
+											{{ form.email }}
+										</div>
 									</div>
 								</div>
-								<div class="col-sm-6">
-									<div class="mb-3">
-										<input name="form_email" class="form-control required email" type="email" placeholder="Email">
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="mb-3">
+											{{ form.phone }}
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-12">
-									<div class="mb-3">
-										<input name="form_phone" class="form-control" type="text" placeholder=" Phone">
+							
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="mb-3">
+											{{ form.current_education }}
+										</div>
+									</div>
+									<div class="col-sm-12">
+										<div class="mb-3">
+											{{ form.intended_study_abroad }}
+										</div>
+									</div>
+									<div class="col-sm-12">
+										<div class="mb-3">
+											{{ form.area_of_study_interest }}
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-12">
-									<div class="mb-3">
-										<select name="form_select" class="form-control">
-											<option value="" selected disabled>Select an Branch</option>
-											<option value="option1">Option 1</option>
-											<option value="option2">Option 2</option>
-											<!-- Add more options as needed -->
-										</select>
+							
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="mb-3">
+											{{ form.preferred_country }}
+										</div>
+									</div>
+									<div class="col-sm-12">
+										<div class="mb-3">
+											{{ form.preferred_university_or_region }}
+										</div>
+									</div>
+									<div class="col-sm-12">
+										<div class="mb-3">
+											{{ form.intended_course_of_study }}
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="mb-3">
-								<textarea name="form_message" class="form-control required" rows="7" placeholder="Your Comment here"></textarea>
-							</div>
-							<div class="mb-3">
-								<input name="form_botcheck" class="form-control" type="hidden" value="" />
-								<button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait..."><span class="btn-title">Submit</span></button>
-							</div>
-						</form>
+							
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="mb-3">
+											{{ form.language_proficiency }}
+										</div>
+									</div>
+									<div class="col-sm-12">
+										<div class="mb-3">
+											{{ form.standardized_tests_taken }}
+										</div>
+									</div>
+									<div class="col-sm-12">
+										<div class="mb-3">
+											{{ form.financial_consideration }}
+										</div>
+									</div>
+								</div>
+							
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="mb-3">
+											{{ form.message }}
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="mb-3">
+											{{ form.source }}
+										</div>
+									</div>
+								</div>
+							
+								<div class="mb-3">
+									<button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait..."><span class="btn-title">Submit</span></button>
+								</div>
+							</form>
 						<!-- Contact Form Validation-->
 						</div>
 

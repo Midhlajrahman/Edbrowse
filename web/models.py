@@ -138,4 +138,43 @@ class Enquiry(models.Model):
         verbose_name_plural = ("Enquiries")
         
     def __str__(self):
+        return str(self.full_name)
+    
+
+class ServiceEnquiry(models.Model):
+    full_name = models.CharField(max_length=250)
+    email = models.EmailField(max_length=250)
+    phone = models.CharField(max_length=250)
+    service = models.CharField(max_length=250)
+    message = models.TextField()
+
+    class Meta:
+        verbose_name_plural = ("Service Enquiries")
+        
+    def __str__(self):
+        return str(self.full_name)
+    
+class EventEnquiry(models.Model):
+    full_name = models.CharField(max_length=250)
+    email = models.EmailField(max_length=250)
+    phone = models.CharField(max_length=250)
+    event = models.CharField(max_length=250)
+
+    class Meta:
+        verbose_name_plural = ("Event Enquiries")
+        
+    def __str__(self):
+        return str(self.full_name)
+    
+class Testimonial(models.Model):
+    name = models.CharField(max_length=250)
+    designation = models.CharField(max_length=250)
+    description = models.TextField()
+    photo = VersatileImageField("Testimonial Image",  upload_to="testimonials/",ppoi_field="ppoi")
+    ppoi = PPOIField(("Image PPOI"))
+
+    class Meta:
+        verbose_name_plural = ("Testimonials")
+
+    def __str__(self):
         return str(self.name)

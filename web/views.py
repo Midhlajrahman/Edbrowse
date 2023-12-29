@@ -1,8 +1,9 @@
-from django.http import JsonResponse
+import json
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
-from web.forms import ContactForm
+from web.forms import ContactForm, EnquiryForm, EventEnquiryForm, ServiceEnquiryForm
 
-from web.models import Blog, Country, Course, Event, Service
+from web.models import Blog, Country, Course, Event, Service, ServiceEnquiry, Testimonial
 
 # Create your views here.
 
@@ -10,10 +11,36 @@ def index(request):
     services = Service.objects.all()
     courses = Course.objects.all()
     blogs = Blog.objects.all()
+    testimonials = Testimonial.objects.all()
+
+    if request.method == "POST":
+        form = ContactForm(request.POST or None, request.FILES or None)
+        if form.is_valid():
+            form.save()
+            response_data = {
+                "status": "true",
+                "title": "Successfully Submitted",
+                "message": "Thank You, Our Team Will Contact You Soon",
+            }
+        else:
+            print(form.errors)
+            response_data = {
+                "status": "false",
+                "title": "Form Validation Error",
+                "message": form.errors.as_json(),
+            }
+        return JsonResponse(response_data)
+    else:
+        form = ContactForm()
+
+
+
     context ={
         "services":services,
         "courses":courses,
-        "blogs":blogs
+        "blogs":blogs,
+        "form":form,
+        "testimonials":testimonials
     }
     return render(request, 'web/index.html',context)
 
@@ -51,8 +78,28 @@ def courses(request):
 def course_details(request,slug):
     course_detail = Course.objects.get(slug=slug)    
 
+    if request.method == "POST":
+        form = EnquiryForm(request.POST or None, request.FILES or None)
+        if form.is_valid():
+            form.save()
+            response_data = {
+                "status": "true",
+                "title": "Successfully Submitted",
+                "message": "Thank You, Our Team Will Contact You Soon",
+            }
+        else:
+            print(form.errors)
+            response_data = {
+                "status": "false",
+                "title": "Form Validation Error",
+                "message": form.errors.as_json(),
+            }
+        return JsonResponse(response_data)
+    else:
+        form = EnquiryForm()
     context ={
-        "course_detail":course_detail
+        "course_detail":course_detail,
+        "form":form
     }
     return render(request, 'web/course-details.html',context)
 
@@ -67,9 +114,36 @@ def services(request):
 
 def service_details(request,slug):
     service_detail= Service.objects.get(slug=slug)
+
+    form = ServiceEnquiryForm(
+        service=service_detail.service_name, data=request.POST or None, files=request.FILES or None
+    )
+    if request.method == "POST":
+        if form.is_valid():
+            data = form.save()
+           
+            response_data = {
+                "status": "true",
+                "title": "Successfully Submitted",
+                "message": "Thank You, Our Team Will Contact you Soon",
+            }
+        else:
+            print(form.errors)
+            response_data = {
+                "status": "false",
+                "title": "form2 validation error",
+                "message": repr(form.errors),
+            }
+        return HttpResponse(
+            json.dumps(response_data), content_type="application/javascript"
+        )
+
+    
+
     context ={
-    "service_detail":service_detail
-    }
+            "service_detail":service_detail,
+            "form":form,
+        }
     return render(request, 'web/service-details.html',context)
 
 
@@ -103,8 +177,32 @@ def event(request):
 def event_details(request,slug):
     event_detail = Event.objects.get(slug=slug)
 
+    form = EventEnquiryForm(
+        event=event_detail.title, data=request.POST or None, files=request.FILES or None
+    )
+    if request.method == "POST":
+        if form.is_valid():
+            data = form.save()
+           
+            response_data = {
+                "status": "true",
+                "title": "Successfully Submitted",
+                "message": "Thank You, Our Team Will Contact you Soon",
+            }
+        else:
+            print(form.errors)
+            response_data = {
+                "status": "false",
+                "title": "form2 validation error",
+                "message": repr(form.errors),
+            }
+        return HttpResponse(
+            json.dumps(response_data), content_type="application/javascript"
+        )
+
     context ={
-        "event_detail":event_detail
+        "event_detail":event_detail,
+        "form":form,
     }
     return render(request, 'web/event-details.html',context)
 

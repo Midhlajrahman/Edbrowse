@@ -31,3 +31,19 @@ class EventAdmin(admin.ModelAdmin):
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
     list_display = ("name",)
+
+@admin.register(Enquiry)
+class EnquiryAdmin(admin.ModelAdmin):
+    list_display = ("full_name",)
+
+@admin.register(ServiceEnquiry)
+class ServiceEnquiryAdmin(admin.ModelAdmin):
+    list_display = ("full_name",)
+
+@admin.register(EventEnquiry)
+class EventEnquiryAdmin(admin.ModelAdmin):
+    list_display = ("full_name",)
+
+@admin.register(Testimonial)
+class TestimonialAdmin(admin.ModelAdmin):
+    list_display = ("name",)

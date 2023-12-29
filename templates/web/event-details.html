@@ -46,16 +46,17 @@
                     <div class="sidebar__single sidebar__post">
                         <h3 class="sidebar__title">Register for Event</h3>
                         <!-- Contact Form -->
-					<form id="contact_form" name="contact_form" class="" method="post">
+					<form id="contact_form" name="contact_form" class="form event" method="post">
+                        {% csrf_token %}
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="mb-3">
-									<input name="form_name" class="form-control" type="text" placeholder="Name">
+									{{ form.full_name }}
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="mb-3">
-									<input name="form_email" class="form-control required email" type="email" placeholder="Email">
+									{{form.email}}
 								</div>
 							</div>
 						</div>
@@ -63,10 +64,19 @@
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="mb-3">
-									<input name="form_phone" class="form-control" type="text" placeholder=" Phone">
+									{{form.phone}}
 								</div>
 							</div>
 						</div>
+
+                        <div class="row">
+							<div class="col-sm-12">
+								<div class="mb-3">
+									{{form.event}}
+								</div>
+							</div>
+						</div>
+                        
                         
 						<div class="mb-3">
 							<input name="form_botcheck" class="form-control" type="hidden" value="" />

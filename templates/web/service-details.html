@@ -42,43 +42,38 @@
                     <div class="sidebar__single sidebar__post">
                         <h3 class="sidebar__title">Enquiry Form</h3>
                         <!-- Contact Form -->
-					<form id="contact_form" name="contact_form" class="" method="post">
+					<form id="contact_form" name="contact_form" class="form service" method="post">
+                        {% csrf_token %}
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="mb-3">
-									<input name="form_name" class="form-control" type="text" placeholder="Name">
+									{{ form.full_name }}
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="mb-3">
-									<input name="form_email" class="form-control required email" type="email" placeholder="Email">
+									{{form.email}}
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="mb-3">
-									<input name="form_phone" class="form-control" type="text" placeholder=" Phone">
+									{{form.phone}}
 								</div>
 							</div>
 						</div>
                         <div class="row">
 							<div class="col-sm-12">
 								<div class="mb-3">
-									<select name="form_select" class="form-control">
-                                        <option value="" selected disabled>Select an Branch</option>
-                                        <option value="option1">Option 1</option>
-                                        <option value="option2">Option 2</option>
-                                        <!-- Add more options as needed -->
-                                    </select>
+									{{form.service}}
 								</div>
 							</div>
 						</div>
 						<div class="mb-3">
-							<textarea name="form_message" class="form-control required" rows="7" placeholder="Your Comment here"></textarea>
+							{{form.message}}
 						</div>
 						<div class="mb-3">
-							<input name="form_botcheck" class="form-control" type="hidden" value="" />
 							<button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait..."><span class="btn-title">Submit</span></button>
 						</div>
 					</form>
