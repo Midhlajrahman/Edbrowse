@@ -1,0 +1,53 @@
+{% extends 'web/base.html' %} 
+{% load static %} 
+{% block content %}
+
+
+	<!-- Start main-content -->
+	<section class="page-title" style="background-image: url({% static 'web/images/background/page-title.jpg' %});">
+		<div class="auto-container">
+			<div class="title-outer">
+				<h1 class="title">Courses</h1>
+				<ul class="page-breadcrumb">
+					<li><a href="">Home</a></li>
+					<li>Courses</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<!-- end main-content -->
+
+	<!-- Services Section -->
+	<section class="">
+		<div class="container pb-90">
+
+			<div class="row">
+				{% for course in courses %}
+				<!-- Service Block -->
+				<div class="service-block col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="image-box">
+							<figure class="image"><a href="{{course.get_absolute_url}}"><img src="{{course.cover_image.url}}" alt=""></a></figure>
+							
+							<h6 class="title">{{course.course_name}}</h6>
+						</div>
+						<div class="content-box">
+							<h6 class="title"><a href="{{course.get_absolute_url}}">{{course.course_name}}</a></h6>
+							
+							<a href="{{course.get_absolute_url}}" class="read-more">More <i class="fa fa-long-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+	<!-- End Services Section-->
+
+
+
+
+
+
+
+{% endblock %}

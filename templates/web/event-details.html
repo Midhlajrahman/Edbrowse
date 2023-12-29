@@ -1,0 +1,91 @@
+{% extends 'web/base.html' %} 
+{% load static %} 
+{% block content %}
+
+
+<!-- Start main-content -->
+<section class="page-title" style="background-image: url({% static 'web/images/background/page-title.jpg' %});">
+    <div class="auto-container">
+        <div class="title-outer">
+            <h4 class="title" style="font-size: 40px!important" >{{event_detail.title}}</h4>
+            <ul class="page-breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Event</a></li>
+                <li>{{event_detail.title}}</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end main-content -->
+
+<!--Blog Details Start-->
+<section class="blog-details">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-7">
+                <div class="blog-details__left">
+                    <div class="blog-details__img">
+                        <img src="{{event_detail.event_image.url}}" alt="">
+                    </div>
+                    <div class="blog-details__content">
+                        <ul class="list-unstyled blog-details__meta">
+                            <li><a><i class="fas fa-clock"></i>{{event_detail.date}} - {{event_detail.time}} </a> </li>
+                            <li><a><i class="fas fa-location"></i>{{ event_detail.location }}</a>
+                            </li>
+                        </ul>
+                        <h3 class="blog-details__title">{{event_detail.title}}</h3>
+                        <p >{{event_detail.content|safe}}</p>  
+                    </div>
+                    
+                  
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-5">
+                <div class="sidebar">
+                    
+                    <div class="sidebar__single sidebar__post">
+                        <h3 class="sidebar__title">Register for Event</h3>
+                        <!-- Contact Form -->
+					<form id="contact_form" name="contact_form" class="" method="post">
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="mb-3">
+									<input name="form_name" class="form-control" type="text" placeholder="Name">
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="mb-3">
+									<input name="form_email" class="form-control required email" type="email" placeholder="Email">
+								</div>
+							</div>
+						</div>
+                        
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="mb-3">
+									<input name="form_phone" class="form-control" type="text" placeholder=" Phone">
+								</div>
+							</div>
+						</div>
+                        
+						<div class="mb-3">
+							<input name="form_botcheck" class="form-control" type="hidden" value="" />
+							<button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait..."><span class="btn-title">Register</span></button>
+							
+					</form>
+					<!-- Contact Form Validation-->
+                    </div>
+                    
+                   
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Blog Details End-->
+
+
+
+
+{% endblock %}

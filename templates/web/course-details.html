@@ -1,0 +1,100 @@
+{% extends 'web/base.html' %} 
+{% load static %} 
+{% block content %}
+
+
+	<!-- Start main-content -->
+	<section class="page-title" style="background-image: url({% static 'web/images/background/page-title.jpg' %});">
+		<div class="auto-container">
+			<div class="title-outer">
+				<h1 class="title">{{course_detail.course_name}}</h1>
+				<ul class="page-breadcrumb">
+					<li><a href="index.html">Home</a></li>
+					<li>Course</li>
+					<li>{{course_detail.course_name}}</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<!-- end main-content -->
+
+	<!--Start Services Details-->
+	
+
+	<section class="blog-details">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-8 col-lg-7">
+					<div class="blog-details__left">
+	
+						<div class="blog-details__img">
+							<img src="{{course_detail.cover_image.url}}" alt="">
+						</div>
+
+						<div class="blog-details__content">
+							<h2 class="mt-4">{{course_detail.course_name}}</h2>
+							<p>{{course_detail.content|safe}}</p>  	
+						</div>
+	
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-5">
+					<div class="sidebar">
+						
+						<div class="sidebar__single sidebar__post">
+							<h3 class="sidebar__title">Enquiry Form</h3>
+							<!-- Contact Form -->
+						<form id="contact_form" name="contact_form" class="" method="post">
+							<div class="row">
+								
+								<div class="col-sm-6">
+									<div class="mb-3">
+										<input name="form_name" class="form-control" type="text" placeholder="Name">
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="mb-3">
+										<input name="form_email" class="form-control required email" type="email" placeholder="Email">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="mb-3">
+										<input name="form_phone" class="form-control" type="text" placeholder=" Phone">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="mb-3">
+										<select name="form_select" class="form-control">
+											<option value="" selected disabled>Select an Branch</option>
+											<option value="option1">Option 1</option>
+											<option value="option2">Option 2</option>
+											<!-- Add more options as needed -->
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="mb-3">
+								<textarea name="form_message" class="form-control required" rows="7" placeholder="Your Comment here"></textarea>
+							</div>
+							<div class="mb-3">
+								<input name="form_botcheck" class="form-control" type="hidden" value="" />
+								<button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait..."><span class="btn-title">Submit</span></button>
+							</div>
+						</form>
+						<!-- Contact Form Validation-->
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--End Services Details-->
+
+
+
+{% endblock %}

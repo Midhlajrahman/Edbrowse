@@ -1,0 +1,627 @@
+{% extends 'web/base.html' %} 
+{% load static %} 
+{% block content %}
+<!-- Main Slider -->
+<section class="main-slider">
+    <div class="rev_slider_wrapper fullwidthbanner-container" id="rev_slider_one_wrapper" data-source="gallery">
+        <div class="rev_slider fullwidthabanner" id="rev_slider_one" data-version="5.4.1">
+            <ul>
+                <!-- Slide 1 -->
+                <li data-index="rs-1" data-transition="zoomout">
+                    <!-- MAIN IMAGE -->
+                    <img src="{% static 'web/images/main-slider/1.jpg' %}" alt="" class="rev-slidebg">
+
+                    <div class="tp-caption" 
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[15,15,15,15]"
+                    data-paddingright="[15,15,15,15]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text" data-height="none"
+                    data-width="['750','750','750','650']"
+                    data-whitespace="normal"
+                    data-hoffset="['600','0','0','0']"
+                    data-voffset="['-70','-70','-70','-90']"
+                    data-x="['left','left','left','left']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-textalign="['top','top','top','top']"
+                    data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
+                        <h1>Welcome to <span class="color3">Edbrowse</span><br>Your Gateway to Global Education</h1>
+                    </div>
+                    
+                    <div class="tp-caption" 
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[15,15,15,15]"
+                    data-paddingright="[0,0,0,0]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text" data-height="none"
+                    data-width="['750','750','750','450']"
+                    data-whitespace="normal"
+                    data-hoffset="['600','0','0','0']"
+                    data-voffset="['90','90','90','60']"
+                    data-x="['left','left','left','left']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-textalign="['top','top','top','top']"
+                    data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
+                        <div class="text">Get the best solutions for all type of visa & immigrations</div>
+                    </div>
+
+                    <div class="tp-caption" data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[15,15,15,15]"
+                    data-paddingright="[15,15,15,15]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text" data-height="none"
+                    data-width="['700','750','700','450']"
+                    data-whitespace="normal"
+                    data-hoffset="['600','0','0','0']"
+                    data-voffset="['170','185','190','160']"
+                    data-x="['left','left','left','left']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-textalign="['top','top','top','top']"
+                    data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
+                        <div class="btn-box">
+                            <a href="#" class="theme-btn btn-style-one"><span class="btn-title">Explore More</span></a>
+                            <a href="#" class="theme-btn btn-style-two"><span class="btn-title">Contact Now</span></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Main Slider-->
+
+<!-- About Section Three -->
+<section class="about-section-three pull-down">
+    <div class="bg"></div>
+    <div class="auto-container">
+        <div class="row">
+            <div class="content-column col-xl-6 col-lg-7 col-md-12 col-sm-12 order-2 wow fadeInRight" data-wow-delay="600ms">
+                <div class="inner-column">
+                    <div class="sec-title">
+                        <span class="sub-title">about the company</span>
+                        <h2>Empowering Global Minds,  <br>Building Future  <span class="color3">Leaders</span></h2>
+                        <div class="text">Welcome to Edbrowse, a trusted name in the realm of overseas education consultancy with a legacy spanning over 13 years. Our journey began with a vision to empower students to achieve their educational dreams, and today, we stand as a beacon of guidance and support in the field.</div>
+                    </div>
+
+            
+                    <div class="bottom-box">
+                       
+                        
+                        <a href="{% url 'web:about' %}" class="theme-btn btn-style-one hvr-dark"><span class="btn-title">Explore More</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Column -->
+            <div class="image-column col-xl-6 col-lg-5 col-md-12 col-sm-12">
+                <div class="inner-column">
+                    <div class="image-box">
+                        <figure class="abs-image"><img src="{% static 'web/images/resource/image-2.png' %}" alt=""></figure>
+                        <figure class="image-1 overlay-anim wow fadeInRight"><img src="{% static 'web/images/resource/about-7.jpg' %}" alt=""></figure>
+                        <figure class="image-2 overlay-anim wow fadeInRight"><img src="{% static 'web/images/resource/about-8.jpg' %}" alt=""></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Emd About Section Three -->
+
+<!-- Why Choose US -->
+<section class="why-choose-us pt-0">
+    <div class="bg bg-pattern-1"></div>
+
+    <div class="auto-container">
+        <div class="sec-title text-center">
+            <span class="sub-title">Why Choose Edbrowse</span>
+            <h2>A Consultancy with a <span class="color3">Futuristic Vision</span></h2>
+        </div>
+
+        <div class="row">
+            <!-- Features Block -->
+            <div class="feature-block col-xl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp">
+                <div class="inner-box">
+                    <i class="icon flaticon-interview"></i>
+                    
+                    <h6 class="title"><a href="#">13 Years of Experience</a></h6>
+                </div>
+            </div>
+
+            <!-- Features Block -->
+            <div class="feature-block col-xl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="300ms">
+                <div class="inner-box">
+                    <div class="content">
+                        <i class="icon flaticon-low-cost"></i>
+                        
+                        <h6 class="title"><a href="#">Dedicated Success Team</a></h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Block -->
+            <div class="feature-block col-xl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="600ms">
+                <div class="inner-box">
+                    <div class="content">
+                        <i class="icon flaticon-loyalty"></i>
+                        
+                        <h6 class="title"><a href="#">Worldwide Partnerships</a></h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Block -->
+            <div class="feature-block col-xl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="900ms">
+                <div class="inner-box">
+                    <div class="content">
+                        <i class="icon flaticon-online-support"></i>
+                        
+                        <h6 class="title"><a href="#">End-to-End Assistance</a></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-text">Over 13 years of dedicated service in the field of overseas education consultancy. <a href="#" class="theme-btn btn-style-two">Discover More</a></div>
+    </div>
+</section>
+<!--Emd Why Choose US -->
+
+    <!-- Services Section -->
+	<section class="training-section">
+		<div class="bg bg-pattern-2"></div>
+		<div class="bg bg-image" style="background-image: url({% static 'web/images/resource/image-1.jpg' %})"></div>
+		<div class="auto-container">
+			<div class="sec-title">
+				<span class="sub-title">Our Services</span>
+				<h2>Get the Immigration <br> Trainings you <span class="color3">Deserve</span></h2>
+				<a href="#" class="theme-btn btn-style-two">Discover More</a>
+			</div>
+
+			<div class="carousel-outer">
+				<div class="training-carousel owl-carousel owl-theme">
+					
+                    <!-- Training Block -->
+                    {% for service in services %}
+					<div class="training-block">
+						<div class="inner-box">
+							<div class="image-box">
+								<figure class="image"><img src="{{service.cover_image.url}}" alt=""></figure>
+								<div class="overlay"><a href="{{service.get_absolute_url}}" class="read-more"><i class="fa fa-long-arrow-alt-right"></i></a></div>
+							</div>
+							<div class="lower-content">
+								<a href="{{service.get_absolute_url}}" class="read-more"><i class="fa fa-long-arrow-alt-right"></i></a>
+								<h5 class="title"><a href="{{service.get_absolute_url}}">{{service.service_name}}</a></h5>
+								<div class="text">{{service.sub_content}}</div>
+							</div>
+						</div>
+					</div>
+                    {% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Services Section -->
+
+
+	<!-- Courses Section Three -->
+	<section class="training-section-three">
+		<div class="auto-container">
+			<div class="sec-title text-center">
+				<span class="sub-title">Our Courses</span>
+				<h2>Get the Trainings you <span class="color3">Deserve</span></h2>
+			</div>
+			
+			<div class="carousel-outer">
+				<div class="training-carousel-two owl-carousel owl-theme">
+
+                    {% for course in courses %}
+					<!-- Training Block Two-->
+					<div class="training-block-two">
+						<div class="inner-box">
+							<div class="image-box">
+								<figure class="image"><img src="{{course.cover_image.url}}" alt=""></figure>
+								<a href="{{course.get_absolute_url}}" class="read-more"><i class="fa fa-long-arrow-alt-right"></i></a>
+								<h4 class="title">{{course.course_name}}</h4>
+							</div>
+							<div class="overlay-content">
+								<div class="inner">
+									
+									<h5 class="title"><a href="{{course.get_absolute_url}}">{{course.course_name}}</a></h5>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+                    {% endfor %}
+
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Courses Section -->
+
+<!-- Countries Section -->
+<section class="countries-section pt-0">
+    <div class="auto-container">
+        <div class="sec-title text-center">
+            <span class="sub-title">countries you can visit</span>
+            <h2>Countries we’re supporting <br>for the <span class="color3">immigration</span></h2>
+        </div>
+
+        <div class="carousel-outer">
+            <!-- Countries Carousel -->
+            <div class="countries-carousel owl-carousel owl-theme">
+                <!-- Country Block-->
+                {% for country in countries %}
+                <div class="country-block">
+                    <div class="inner-box">
+                        <div class="flag"><img src="{{country.country_image.url}}" alt=""></div>
+                        <a href="{{country.get_absolute_url}}" class="theme-btn">{{country.country_name}}</a>
+                    </div>                        
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Countries Section Two -->
+
+<!-- Clients Section   -->
+<section class="clients-section">
+    <div class="auto-container">
+        <!-- Sponsors Outer -->
+        <div class="sponsors-outer">
+            <!--clients carousel-->
+            <ul class="clients-carousel owl-carousel owl-theme">
+                <li class="slide-item"> <a href="#"><img src="{% static 'web/images/resource/client.png' %}" alt=""></a> </li>
+                <li class="slide-item"> <a href="#"><img src="{% static 'web/images/resource/client.png' %}" alt=""></a> </li>
+                <li class="slide-item"> <a href="#"><img src="{% static 'web/images/resource/client.png' %}" alt=""></a> </li>
+                <li class="slide-item"> <a href="#"><img src="{% static 'web/images/resource/client.png' %}" alt=""></a> </li>
+                <li class="slide-item"> <a href="#"><img src="{% static 'web/images/resource/client.png' %}" alt=""></a> </li>
+                <li class="slide-item"> <a href="#"><img src="{% static 'web/images/resource/client.png' %}" alt=""></a> </li>
+                <li class="slide-item"> <a href="#"><img src="{% static 'web/images/resource/client.png' %}" alt=""></a> </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End Clients Section -->
+
+<!-- Gallery Section -->
+<section class="gallery-section pt-0">
+    <div class="large-container">
+        <div class="carousel-outer">
+            <div class="title-box">
+                <div class="inner">
+                    
+                    <h2 class="title">Checkout <br>our photo<br> gallery</h2>
+                </div>
+            </div>
+            
+            <!--clients carousel-->
+            <ul class="gallery-carousel owl-carousel owl-theme wow fadeInUp">
+                <li class="gallery-item"> <a href="{% static 'web/images/resource/gallery-1.jpg' %}" class="lightbox-image"><img src="{% static 'web/images/resource/gallery-1.jpg' %}" alt=""></a> </li>
+                <li class="gallery-item"> <a href="{% static 'web/images/resource/gallery-2.jpg' %}" class="lightbox-image"><img src="{% static 'web/images/resource/gallery-2.jpg' %}" alt=""></a> </li>
+                <li class="gallery-item"> <a href="{% static 'web/images/resource/gallery-3.jpg' %}" class="lightbox-image"><img src="{% static 'web/images/resource/gallery-3.jpg' %}" alt=""></a> </li>
+                <li class="gallery-item"> <a href="{% static 'web/images/resource/gallery-4.jpg' %}" class="lightbox-image"><img src="{% static 'web/images/resource/gallery-4.jpg' %}" alt=""></a> </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End Gallery Section -->
+
+<!-- Testimonial Section -->
+<section class="testimonial-section pull-down">
+    <div class="bg-image" style="background-image: url({% static 'web/images/background/1.jpg' %})"></div>
+    <div class="anim-icons">
+        <span class="icon icon-wide-map"></span>
+    </div>
+    <div class="auto-container">
+        <div class="sec-title text-center light">
+            <span class="sub-title">our testimonials</span>
+            <h2>What they’re talking about<br>the <span class="color3">consultancy</span></h2>
+        </div>
+        
+        <div class="carousel-outer">
+            <div class="testimonial-carousel owl-carousel owl-theme">
+                <!-- Testimonial Block -->
+                <div class="testimonial-block">
+                    <div class="inner-box">
+                        <div class="content-box">
+                            <span class="icon fa fa-quote-left"></span>
+                            <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                            <div class="text">I was very impresed by the remons service lorem ipsum is simply free text used by copy typing refreshing. Neque porro est qui dolorem ipsum quia.</div>
+                        </div>
+                        <div class="info-box">
+                            <figure class="thumb"><img src="{% static 'web/images/resource/testi-thumb-1.jpg' %}" alt=""></figure>
+                            <h6 class="name">Jessica Brown</h6>
+                            <span class="designation">Customer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial Block -->
+                <div class="testimonial-block">
+                    <div class="inner-box">
+                        <div class="content-box">
+                            <span class="icon fa fa-quote-left"></span>
+                            <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                            <div class="text">I was very impresed by the remons service lorem ipsum is simply free text used by copy typing refreshing. Neque porro est qui dolorem ipsum quia.</div>
+                        </div>
+                        <div class="info-box">
+                            <figure class="thumb"><img src="{% static 'web/images/resource/testi-thumb-2.jpg' %}" alt=""></figure>
+                            <h6 class="name">Kevin Martin</h6>
+                            <span class="designation">Customer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial Block -->
+                <div class="testimonial-block">
+                    <div class="inner-box">
+                        <div class="content-box">
+                            <span class="icon fa fa-quote-left"></span>
+                            <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                            <div class="text">I was very impresed by the remons service lorem ipsum is simply free text used by copy typing refreshing. Neque porro est qui dolorem ipsum quia.</div>
+                        </div>
+                        <div class="info-box">
+                            <figure class="thumb"><img src="{% static 'web/images/resource/testi-thumb-3.jpg' %}" alt=""></figure>
+                            <h6 class="name">Sarah Albert</h6>
+                            <span class="designation">Customer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial Block -->
+                <div class="testimonial-block">
+                    <div class="inner-box">
+                        <div class="content-box">
+                            <span class="icon fa fa-quote-left"></span>
+                            <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                            <div class="text">I was very impresed by the remons service lorem ipsum is simply free text used by copy typing refreshing. Neque porro est qui dolorem ipsum quia.</div>
+                        </div>
+                        <div class="info-box">
+                            <figure class="thumb"><img src="{% static 'web/images/resource/testi-thumb-1.jpg' %}" alt=""></figure>
+                            <h6 class="name">Jessica Brown</h6>
+                            <span class="designation">Customer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial Block -->
+                <div class="testimonial-block">
+                    <div class="inner-box">
+                        <div class="content-box">
+                            <span class="icon fa fa-quote-left"></span>
+                            <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                            <div class="text">I was very impresed by the remons service lorem ipsum is simply free text used by copy typing refreshing. Neque porro est qui dolorem ipsum quia.</div>
+                        </div>
+                        <div class="info-box">
+                            <figure class="thumb"><img src="{% static 'web/images/resource/testi-thumb-2.jpg' %}" alt=""></figure>
+                            <h6 class="name">Kevin Martin</h6>
+                            <span class="designation">Customer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial Block -->
+                <div class="testimonial-block">
+                    <div class="inner-box">
+                        <div class="content-box">
+                            <span class="icon fa fa-quote-left"></span>
+                            <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                            <div class="text">I was very impresed by the remons service lorem ipsum is simply free text used by copy typing refreshing. Neque porro est qui dolorem ipsum quia.</div>
+                        </div>
+                        <div class="info-box">
+                            <figure class="thumb"><img src="{% static 'web/images/resource/testi-thumb-3.jpg' %}" alt=""></figure>
+                            <h6 class="name">Sarah Albert</h6>
+                            <span class="designation">Customer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial Block -->
+                <div class="testimonial-block">
+                    <div class="inner-box">
+                        <div class="content-box">
+                            <span class="icon fa fa-quote-left"></span>
+                            <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                            <div class="text">I was very impresed by the remons service lorem ipsum is simply free text used by copy typing refreshing. Neque porro est qui dolorem ipsum quia.</div>
+                        </div>
+                        <div class="info-box">
+                            <figure class="thumb"><img src="{% static 'web/images/resource/testi-thumb-1.jpg' %}" alt=""></figure>
+                            <h6 class="name">Jessica Brown</h6>
+                            <span class="designation">Customer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial Block -->
+                <div class="testimonial-block">
+                    <div class="inner-box">
+                        <div class="content-box">
+                            <span class="icon fa fa-quote-left"></span>
+                            <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                            <div class="text">I was very impresed by the remons service lorem ipsum is simply free text used by copy typing refreshing. Neque porro est qui dolorem ipsum quia.</div>
+                        </div>
+                        <div class="info-box">
+                            <figure class="thumb"><img src="{% static 'web/images/resource/testi-thumb-2.jpg' %}" alt=""></figure>
+                            <h6 class="name">Kevin Martin</h6>
+                            <span class="designation">Customer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial Block -->
+                <div class="testimonial-block">
+                    <div class="inner-box">
+                        <div class="content-box">
+                            <span class="icon fa fa-quote-left"></span>
+                            <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                            <div class="text">I was very impresed by the remons service lorem ipsum is simply free text used by copy typing refreshing. Neque porro est qui dolorem ipsum quia.</div>
+                        </div>
+                        <div class="info-box">
+                            <figure class="thumb"><img src="{% static 'web/images/resource/testi-thumb-3.jpg' %}" alt=""></figure>
+                            <h6 class="name">Sarah Albert</h6>
+                            <span class="designation">Customer</span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Testimonial Section -->
+
+<!-- Contact Section -->
+<section class="contact-section">
+    <div class="outer-box">
+        <div class="bg bg-pattern-6"></div>
+        <div class="auto-container">
+            <div class="row">
+                <!-- Title Column -->
+                <div class="title-column col-lg-7 col-md-12 wow fadeInLRight">
+                    <div class="inner-column">
+                        <div class="sec-title">
+                            <span class="sub-title">contact with us</span>
+                            <h2>Book your <span class="color3">consultation</span></h2>
+                            <div class="text">There cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs condmentum leo massa mollis.</div>
+                        </div>
+
+                        <ul class="list-style-two">
+                            <li><i class="fa fa-check-circle"></i> Making this the first true generator on the Internet</li>
+                            <li><i class="fa fa-check-circle"></i> Lorem Ipsum is not simply random text</li>
+                            <li><i class="fa fa-check-circle"></i> If you are going to use a passage</li>
+                        </ul>
+                        
+                        <div class="ceo-info">
+                            <figure class="thumb"><img src="{% static 'web/images/resource/ceo-thumb.jpg' %}" alt=""></figure>
+                            <h6 class="name">Aleesha Brown</h6>
+                            <div class="designation">CEO & CO Founder</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="form-column col-lg-5 col-md-12 col-sm-12">
+                    <div class="inner-column">
+                        <div class="form-outer">
+
+                            <!-- Contact Form -->
+                            <div class="contact-form wow fadeInLeft">
+                                <!--Contact Form-->
+                                <form method="post" id="contact-form">
+                                    <div class="form-group">
+                                        <input type="text" name="full_name" placeholder="Your Name" required>
+                                    </div>
+                        
+                                    <div class="form-group">
+                                        <input type="text" name="Email" placeholder="Email Address" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <textarea name="message" placeholder="Write a Message" required></textarea>
+                                    </div>
+                    
+                                    <div class="form-group">
+                                        <button class="theme-btn btn-style-three" type="submit" name="submit-form"><span class="btn-title">Send a Message</span></button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!--End Contact Form -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Contact Section -->
+
+<!-- News Section -->
+<section class="news-section">
+    <div class="auto-container">
+        <div class="sec-title text-center">
+            <span class="sub-title">News & Updates</span>
+            <h2>Latest news directly <br> from the <span class="color3">blog</span></h2>
+        </div>
+
+        <div class="row">
+            {% for blog in blogs %}
+            <!-- News Block -->
+            <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
+                <div class="inner-box">
+                    <div class="image-box">
+                        <figure class="image"><a href="{{blog.get_absolute_url}}"><img src="{{blog.cover_image.url}}" alt=""></a></figure>
+							
+                    </div>
+                    <div class="lower-content">
+                        <ul class="post-info">
+                            <li><i class="fa fa-calendar-check"></i> {{blog.date}}</li>
+                        </ul>
+                        <h4 class="title"><a href="{{blog.get_absolute_url}}">{{blog.title}}</a></h4>
+                        <div class="text">{{blog.content|safe|truncatechars:99}}</div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!--End News Section -->
+
+
+	<!--Start Services Details-->
+	<section class="services-details">
+		<div class="container">
+			<div class="row">
+				
+				<!--Start Services Details Content-->
+				<div class="col-xl-12 col-lg-12">
+					<div class="services-details__content">
+						<div class=" mt-25">
+							<h3>Frequently Asked Question</h3>
+							<p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+							<ul class="accordion-box wow fadeInRight">
+								<!--Block-->
+								<li class="accordion block active-block">
+									<div class="acc-btn active">How to soft launch your business?
+										<div class="icon fa fa-plus"></div>
+									</div>
+									<div class="acc-content current">
+										<div class="content">
+											<div class="text">There are many variations of passages the majority have suffered alteration in some fo injected humour, or randomised words believable.</div>
+										</div>
+									</div>
+								</li>
+								<!--Block-->
+								<li class="accordion block">
+									<div class="acc-btn">Is my technology allowed on tech?
+										<div class="icon fa fa-plus"></div>
+									</div>
+									<div class="acc-content">
+										<div class="content">
+											<div class="text">There are many variations of passages the majority have suffered alteration in some fo injected humour, or randomised words believable.</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--End Services Details Content-->
+			</div>
+		</div>
+	</section>
+	<!--End Services Details-->
+
+
+
+
+
+{% endblock %}
