@@ -21,5 +21,9 @@ urlpatterns = [
     path("events/",views.event, name="events"),
     path("event/<str:slug>/detail/",views.event_details, name="event_details"),
     path("contact/",views.contact, name="contact"),
+    path("testimonials/",views.testimonial, name="testimonial"),
+    path("core-values/",views.core_values, name="core_values"),
+
+
 
 ]

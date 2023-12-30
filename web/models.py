@@ -178,3 +178,13 @@ class Testimonial(models.Model):
 
     def __str__(self):
         return str(self.name)
+    
+class Faq(models.Model):
+    question = models.TextField()
+    answer = models.TextField()
+
+    class Meta:
+        verbose_name_plural = ("FAQ's")
+
+    def __str__(self):
+        return str(self.question)

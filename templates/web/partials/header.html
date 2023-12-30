@@ -8,7 +8,7 @@
 				<div class="top-left">
 					<!-- Info List -->
 					<ul class="list-style-one">
-						<li><i class="fa fa-envelope"></i> <a href="">needhelp@company.com</a></li>
+						<li><i class="fa fa-envelope"></i> <a href="">help@edbrowse.com</a></li>
 						<li><i class="fa fa-map-marker"></i> 88 Broklyn Golden Street. New York</li> 
 						<li><i class="fa fa-clock"></i> Mon _ Sat: 9.00 to 18.00</li> 
 					</ul>
@@ -36,7 +36,7 @@
 			<!-- Main box -->
 			<div class="main-box">
 				<div class="logo-box">
-					<div class="logo"><a href="#"><img src="{% static 'web/images/edbrowselogo.svg' %}" alt="" title=""></a></div>
+					<div class="logo"><a href="{% url 'web:index' %}"><img src="{% static 'web/images/edbrowselogo.svg' %}" alt="" title=""></a></div>
 				</div>
 
 				<!--Nav Box-->
@@ -75,6 +75,8 @@
 							<li class="dropdown"><a href="#">About</a>
 								<ul>
 									<li><a href="{% url 'web:about' %}">About us</a></li>
+									<li><a href="{% url 'web:testimonial' %}">Testimonials</a></li>
+									<li><a href="{% url 'web:core_values' %}">Core Values</a></li>
 								</ul>
 							</li>
 
@@ -94,7 +96,7 @@
 
 						
 
-						<a href="#" class="theme-btn btn-style-one"><span class="btn-title">Talk to Our experts</span></a>
+						<a href="{% url 'web:contact' %}" class="theme-btn btn-style-one"><span class="btn-title">Talk to Our experts</span></a>
 
 						<!-- Mobile Nav toggler -->
 						<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
@@ -111,7 +113,7 @@
 			<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
 			<nav class="menu-box">
 				<div class="upper-box">
-					<div class="nav-logo"><a href="#"><img src="{% static 'web/images/edbrowselogo.svg' %}" alt="" title=""></a></div>
+					<div class="nav-logo"><a href="{% url 'web:index' %}"><img src="{% static 'web/images/edbrowselogo.svg' %}" alt="" title=""></a></div>
 					<div class="close-btn"><i class="icon fa fa-times"></i></div>
 				</div>
 		
@@ -161,7 +163,7 @@
 			<button class="close-search"><span class="fa fa-times"></span></button>
 		
 			<div class="search-inner">
-				<form method="post" action="https://html.kodesolution.com/2023/immigro-html/index.html">
+				<form method="post" action="">
 					<div class="form-group">
 						<input type="search" name="search-field" value="" placeholder="Search..." required="">
 						<button type="submit"><i class="fa fa-search"></i></button>
@@ -177,7 +179,7 @@
 				<div class="inner-container">
 					<!--Logo-->
 					<div class="logo">
-						<a href="#" title=""><img src="{% static 'web/images/edbrowselogo.svg' %}" alt="" title=""></a>
+						<a href="{% url 'web:index' %}" title=""><img src="{% static 'web/images/edbrowselogo.svg' %}" alt="" title=""></a>
 					</div>
 		
 					<!--Right Col-->

@@ -1,0 +1,48 @@
+{% extends 'web/base.html' %} 
+{% load static %} 
+{% block content %}
+
+
+	<!-- Start main-content -->
+	<section class="page-title" style="background-image: url({% static 'web/images/background/page-title.jpg' %});">
+		<div class="auto-container">
+			<div class="title-outer">
+				<h1 class="title">Testimonial</h1>
+				<ul class="page-breadcrumb">
+					<li><a href="index.html">Home</a></li>
+					<li>Testimonial</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<!-- end main-content -->
+
+	<!-- Testimonial Section -->
+	<section class="bg-silver-light">
+		<div class="container pb-90">
+			<div class="row">
+                {% for testimonial in testimonials %}
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<!-- Testimonial Block -->
+					<div class="testimonial-block mb-md-30">
+						<div class="inner-box">
+							<div class="content-box">
+								<span class="icon fa fa-quote-left"></span>
+								<div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+								<div class="text">{{testimonial.description}}</div>
+							</div>
+							<div class="info-box">
+								<figure class="thumb"><img src="{{testimonial.photo.url}}" alt=""></figure>
+								<h6 class="name text-black">{{testimonial.name}}</h6>
+								<span class="designation">{{testimonial.designation}}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+	<!-- End Testimonial Section -->
+
+{% endblock %}

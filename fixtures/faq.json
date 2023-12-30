@@ -1,0 +1,58 @@
+[
+{
+  "model": "web.faq",
+  "pk": 1,
+  "fields": {
+    "question": "What services does Edbrowse provide?",
+    "answer": "Edbrowse offers a range of services, including academic guidance, university selection, visa assistance, accommodation support, job placement, and comprehensive support throughout the entire study abroad journey."
+  }
+},
+{
+  "model": "web.faq",
+  "pk": 2,
+  "fields": {
+    "question": "How experienced is Edbrowse in the field of overseas education consultancy?",
+    "answer": "Edbrowse boasts over 13 years of experience, making us a trusted and knowledgeable partner in guiding students toward their educational dreams."
+  }
+},
+{
+  "model": "web.faq",
+  "pk": 3,
+  "fields": {
+    "question": "How does Edbrowse assist with university selection?",
+    "answer": "Our experienced counselors help you choose the right courses and universities based on your academic goals and career aspirations. We leverage our global network to provide a diverse range of education options."
+  }
+},
+{
+  "model": "web.faq",
+  "pk": 4,
+  "fields": {
+    "question": "What countries does Edbrowse cover for study abroad opportunities?",
+    "answer": "Edbrowse has established strong relationships with universities worldwide, offering a wide range of education options. Our global reach includes countries across the Americas, Europe, Asia, and beyond."
+  }
+},
+{
+  "model": "web.faq",
+  "pk": 5,
+  "fields": {
+    "question": "How does Edbrowse support students after their arrival in a new country?",
+    "answer": "Our support extends beyond academic guidance. We provide post-arrival support, including accommodation assistance, visa processing, and job placement, ensuring a smooth transition and a fulfilling study abroad experience."
+  }
+},
+{
+  "model": "web.faq",
+  "pk": 6,
+  "fields": {
+    "question": "Does Edbrowse provide assistance with visa applications?",
+    "answer": "Yes, Edbrowse offers perfect visa guidance and processing support, ensuring a consistent track record of successful applications. Our team is dedicated to making the visa application process as smooth as possible."
+  }
+},
+{
+  "model": "web.faq",
+  "pk": 7,
+  "fields": {
+    "question": "Can Edbrowse assist with educational loans for students?",
+    "answer": "Absolutely. Edbrowse provides guaranteed educational loan assistance to students, ensuring financial accessibility is not a barrier to pursuing their educational dreams."
+  }
+}
+]

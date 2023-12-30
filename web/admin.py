@@ -47,3 +47,7 @@ class EventEnquiryAdmin(admin.ModelAdmin):
 @admin.register(Testimonial)
 class TestimonialAdmin(admin.ModelAdmin):
     list_display = ("name",)
+
+@admin.register(Faq)
+class FaqAdmin(admin.ModelAdmin):
+    list_display = ("question",)

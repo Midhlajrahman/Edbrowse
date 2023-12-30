@@ -3,7 +3,7 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from web.forms import ContactForm, EnquiryForm, EventEnquiryForm, ServiceEnquiryForm
 
-from web.models import Blog, Country, Course, Event, Service, ServiceEnquiry, Testimonial
+from web.models import Blog, Country, Course, Event, Faq, Service, ServiceEnquiry, Testimonial
 
 # Create your views here.
 
@@ -12,6 +12,7 @@ def index(request):
     courses = Course.objects.all()
     blogs = Blog.objects.all()
     testimonials = Testimonial.objects.all()
+    faqs = Faq.objects.all()
 
     if request.method == "POST":
         form = ContactForm(request.POST or None, request.FILES or None)
@@ -34,19 +35,20 @@ def index(request):
         form = ContactForm()
 
 
-
     context ={
         "services":services,
         "courses":courses,
         "blogs":blogs,
         "form":form,
-        "testimonials":testimonials
+        "testimonials":testimonials,
+        "faqs":faqs
     }
     return render(request, 'web/index.html',context)
 
 def about(request):
-    
+    faqs = Faq.objects.all()
     context ={
+        "faqs":faqs
     }
     return render(request, 'web/about.html',context)
 
@@ -228,3 +230,16 @@ def contact(request):
         form = ContactForm()
         context = {"form": form, "is_contact": True}
         return render(request, 'web/contact.html', context)
+
+def testimonial(request):
+    testimonials = Testimonial.objects.all()
+
+    context ={
+        "testimonials":testimonials
+    }
+    return render(request, 'web/testimonials.html',context)
+
+def core_values(request):
+    context ={
+    }
+    return render(request, 'web/core-values.html',context)

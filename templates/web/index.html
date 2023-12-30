@@ -44,7 +44,7 @@
                     data-y="['middle','middle','middle','middle']"
                     data-textalign="['top','top','top','top']"
                     data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
-                        <div class="text">Get the best solutions for all type of visa & immigrations</div>
+                        <div class="text">Your Trusted Partner for Over 13 Years</div>
                     </div>
 
                     <div class="tp-caption" data-paddingbottom="[0,0,0,0]"
@@ -176,7 +176,7 @@
 		<div class="auto-container">
 			<div class="sec-title">
 				<span class="sub-title">Our Services</span>
-				<h2>Get the Immigration <br> Trainings you <span class="color3">Deserve</span></h2>
+				<h2>Elevate Your<br> Education Journey <span class="color3">with Our Services</span></h2>
 				<a href="{% url 'web:services' %}" class="theme-btn btn-style-two">Discover More</a>
 			</div>
 
@@ -455,7 +455,7 @@
 <!--End News Section -->
 
 
-	<!--Start Services Details-->
+<!--Start FAQ Details-->
 <section class="services-details">
 		<div class="container">
 			<div class="row">
@@ -468,53 +468,21 @@
 							<p></p>
 							<ul class="accordion-box wow fadeInRight">
 								<!--Block-->
-								<li class="accordion block active-block">
-									<div class="acc-btn active">What services does Edbrowse provide?
+                                {% for faq in faqs %}
+								<li class="accordion block {% if forloop.first %}active-block{% endif %}">
+									<div class="acc-btn {% if forloop.first %}active{% endif %}">{{ faq.question }}
 
 										<div class="icon fa fa-plus"></div>
 									</div>
-									<div class="acc-content current">
+									<div class="acc-content {% if forloop.first %}current{% endif %}">
 										<div class="content">
-											<div class="text">Edbrowse offers a range of services, including academic guidance, university selection, visa assistance, accommodation support, job placement, and comprehensive support throughout the entire study abroad journey.</div>
+											<div class="text">{{ faq.answer }}</div>
 										</div>
 									</div>
 								</li>
+                                {% endfor %}
 								<!--Block-->
-								<li class="accordion block">
-									<div class="acc-btn">How experienced is Edbrowse in the field of overseas education consultancy?
-										<div class="icon fa fa-plus"></div>
-									</div>
-									<div class="acc-content">
-										<div class="content">
-											<div class="text">Edbrowse boasts over 13 years of experience, making us a trusted and knowledgeable partner in guiding students toward their educational dreams.</div>
-										</div>
-									</div>
-								</li>
-                                <li class="accordion block">
-									<div class="acc-btn">How does Edbrowse assist with university selection?
-
-										<div class="icon fa fa-plus"></div>
-									</div>
-									<div class="acc-content">
-										<div class="content">
-											<div class="text">Our experienced counselors help you choose the right courses and universities based on your academic goals and career aspirations. We leverage our global network to provide a diverse range of education options.
-                                            </div>
-										</div>
-									</div>
-								</li>
-                                <li class="accordion block">
-									<div class="acc-btn"> What countries does Edbrowse cover for study abroad opportunities?
-
-										<div class="icon fa fa-plus"></div>
-									</div>
-									<div class="acc-content">
-										<div class="content">
-											<div class="text">Edbrowse has established strong relationships with universities worldwide, offering a wide range of education options. Our global reach includes countries across the Americas, Europe, Asia, and beyond.
-
-                                            </div>
-										</div>
-									</div>
-								</li>
+								
 							</ul>
 						</div>
 					</div>
@@ -522,8 +490,8 @@
 				<!--End Services Details Content-->
 			</div>
 		</div>
-	</section>
-	<!--End Services Details-->
+</section>
+<!--End FAQ Details-->
 
 
 
