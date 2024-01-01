@@ -46,6 +46,14 @@
 						<ul class="navigation">
 							<li class="current"><a href="{% url 'web:index' %}">Home</a></li>
 
+							<li class="dropdown"><a href="#">About</a>
+								<ul>
+									<li><a href="{% url 'web:about' %}">About us</a></li>
+									<li><a href="{% url 'web:testimonial' %}">Testimonials</a></li>
+									<li><a href="{% url 'web:core_values' %}">Core Values</a></li>
+								</ul>
+							</li>
+
 							<li class="dropdown"><a href="{% url 'web:country' %}">Countries</a>
 								
 								<ul>
@@ -72,17 +80,12 @@
 								</ul>
 							</li>
 
-							<li class="dropdown"><a href="#">About</a>
-								<ul>
-									<li><a href="{% url 'web:about' %}">About us</a></li>
-									<li><a href="{% url 'web:testimonial' %}">Testimonials</a></li>
-									<li><a href="{% url 'web:core_values' %}">Core Values</a></li>
-								</ul>
-							</li>
+							
 
-							<li><a href="{% url 'web:contact' %}">Contact</a></li>
+							
 							<li><a href="{% url 'web:blogs' %}">Blogs</a></li>
 							<li><a href="{% url 'web:events' %}">Events</a></li>
+							<li><a href="{% url 'web:contact' %}">Contact</a></li>
 						</ul>
 					</nav>
 					<!-- Main Menu End-->
