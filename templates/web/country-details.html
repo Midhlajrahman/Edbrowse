@@ -3,10 +3,10 @@
 {% block content %}
 
 <!-- Start main-content -->
-<section class="page-title" style="background-image: url({% static 'web/images/background/page-title.jpg' %});">
+<section class="page-title" style="background-image: url({{country_detail.cover_image.url}});">
     <div class="auto-container">
         <div class="title-outer">
-            <h4 class="title" style="font-size: 40px!important" >{{country_detail.tag_line}}</h4>
+            <h4 class="title" style="font-size: 40px!important" >{{country_detail.country_name}}</h4>
             <ul class="page-breadcrumb">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#">Country</a></li>
@@ -23,12 +23,15 @@
         <div class="row">
             <div class="col-xl-8 col-lg-7">
                 <div class="blog-details__left">
+                    
+                    <div class="blog-details__content">
+                        <h3 class="blog-details__title">{{country_detail.tag_line}}</h3>     
+                    </div>
+
                     <div>
-                       
                         <p>
                             {{country_detail.content|safe}}
-                        </p>
-                        
+                        </p> 
                     </div>
                     
                   
@@ -40,41 +43,37 @@
                     <div class="sidebar__single sidebar__post">
                         <h3 class="sidebar__title">Enquiry Form</h3>
                         <!-- Contact Form -->
-					<form id="contact_form" name="contact_form" class="" method="post">
-						<div class="row">
+					<form id="contact_form" name="contact_form" class="form contact" method="post">
+                        {% csrf_token %}
+                        <div class="row">
 							<div class="col-sm-6">
 								<div class="mb-3">
-									<input name="form_name" class="form-control" type="text" placeholder="Name">
+                                    {{form.name}}
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="mb-3">
-									<input name="form_email" class="form-control required email" type="email" placeholder="Email">
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-12">
-								<div class="mb-3">
-									<input name="form_phone" class="form-control" type="text" placeholder=" Phone">
+									{{form.email}}
 								</div>
 							</div>
 						</div>
                         <div class="row">
-							<div class="col-sm-12">
+							<div class="col-sm-6">
 								<div class="mb-3">
-									<select name="form_select" class="form-control">
-                                        <option value="" selected disabled>Select an option</option>
-                                        <option value="option1">Option 1</option>
-                                        <option value="option2">Option 2</option>
-                                        <!-- Add more options as needed -->
-                                    </select>
+                                    {{form.subject}}
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="mb-3">
+                                    {{form.phone}}
 								</div>
 							</div>
 						</div>
+						
 						<div class="mb-3">
-							<textarea name="form_message" class="form-control required" rows="7" placeholder="Your Comment here"></textarea>
+							{{form.message}}
 						</div>
+
 						<div class="mb-3">
 							<input name="form_botcheck" class="form-control" type="hidden" value="" />
 							<button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait..."><span class="btn-title">Send message</span></button>
@@ -97,6 +96,7 @@
 <section class="bg-silver-light">
     <div class="container pb-90">
         <div class="row">
+            {% for testimonial in testimonials %}
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <!-- Testimonial Block -->
                 <div class="testimonial-block mb-md-30">
@@ -104,50 +104,17 @@
                         <div class="content-box">
                             <span class="icon fa fa-quote-left"></span>
                             <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                            <div class="text">I was very impresed by the remons service lorem ipsum is simply free text used by copy typing refreshing. Neque porro est qui dolorem ipsum quia.</div>
+                            <div class="text">{{testimonial.description}}</div>
                         </div>
                         <div class="info-box">
-                            <figure class="thumb"><img src="{% static 'web/images/resource/testi-thumb-1.jpg' %}" alt=""></figure>
-                            <h6 class="name text-black">Jessica Brown</h6>
-                            <span class="designation">Customer</span>
+                            <figure class="thumb"><img src="{{testimonial.photo.url}}" alt=""></figure>
+                            <h6 class="name text-black">{{testimonial.name}}</h6>
+                            <span class="designation">{{testimonial.designation}}</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <!-- Testimonial Block -->
-                <div class="testimonial-block mb-md-30">
-                    <div class="inner-box">
-                        <div class="content-box">
-                            <span class="icon fa fa-quote-left"></span>
-                            <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                            <div class="text">I was very impresed by the remons service lorem ipsum is simply free text used by copy typing refreshing. Neque porro est qui dolorem ipsum quia.</div>
-                        </div>
-                        <div class="info-box">
-                            <figure class="thumb"><img src="{% static 'web/images/resource/testi-thumb-3.jpg' %}" alt=""></figure>
-                            <h6 class="name text-black">Sarah Albert</h6>
-                            <span class="designation">Customer</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <!-- Testimonial Block -->
-                <div class="testimonial-block">
-                    <div class="inner-box">
-                        <div class="content-box">
-                            <span class="icon fa fa-quote-left"></span>
-                            <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                            <div class="text">I was very impresed by the remons service lorem ipsum is simply free text used by copy typing refreshing. Neque porro est qui dolorem ipsum quia.</div>
-                        </div>
-                        <div class="info-box">
-                            <figure class="thumb"><img src="{% static 'web/images/resource/testi-thumb-2.jpg' %}" alt=""></figure>
-                            <h6 class="name text-black">Kevin Martin</h6>
-                            <span class="designation">Customer</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>

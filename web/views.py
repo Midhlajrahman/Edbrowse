@@ -62,9 +62,32 @@ def country(request):
 
 def country_details(request,slug):
     country_detail = Country.objects.get(slug=slug)
+    testimonials = Testimonial.objects.all()
+
+    if request.method == "POST":
+        form = ContactForm(request.POST or None, request.FILES or None)
+        if form.is_valid():
+            form.save()
+            response_data = {
+                "status": "true",
+                "title": "Successfully Submitted",
+                "message": "Thank You, Our Team Will Contact You Soon",
+            }
+        else:
+            print(form.errors)
+            response_data = {
+                "status": "false",
+                "title": "Form Validation Error",
+                "message": form.errors.as_json(),
+            }
+        return JsonResponse(response_data)
+    else:
+        form = ContactForm()
 
     context ={
-        'country_detail':country_detail
+        'country_detail':country_detail,
+        'form':form,
+        'testimonials':testimonials
     }
     return render(request, 'web/country-details.html',context)
 

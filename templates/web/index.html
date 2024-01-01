@@ -99,7 +99,7 @@
             <div class="image-column col-xl-6 col-lg-5 col-md-12 col-sm-12">
                 <div class="inner-column">
                     <div class="image-box">
-                        <figure class="abs-image"><img src="{% static 'web/images/resource/image-2.png' %}" alt=""></figure>
+                        
                         <figure class="image-1 overlay-anim wow fadeInRight"><img src="{% static 'web/images/resource/about-7.jpg' %}" alt=""></figure>
                         <figure class="image-2 overlay-anim wow fadeInRight"><img src="{% static 'web/images/resource/about-8.jpg' %}" alt=""></figure>
                     </div>
@@ -169,41 +169,7 @@
 </section>
 <!--Emd Why Choose US -->
 
-    <!-- Services Section -->
-	<section class="training-section">
-		<div class="bg bg-pattern-2"></div>
-		<div class="bg bg-image" style="background-image: url({% static 'web/images/resource/image-1.jpg' %})"></div>
-		<div class="auto-container">
-			<div class="sec-title">
-				<span class="sub-title">Our Services</span>
-				<h2>Elevate Your<br> Education Journey <span class="color3">with Our Services</span></h2>
-				<a href="{% url 'web:services' %}" class="theme-btn btn-style-two">Discover More</a>
-			</div>
 
-			<div class="carousel-outer">
-				<div class="training-carousel owl-carousel owl-theme">
-					
-                    <!-- Training Block -->
-                    {% for service in services %}
-					<div class="training-block">
-						<div class="inner-box">
-							<div class="image-box">
-								<figure class="image"><img src="{{service.cover_image.url}}" alt=""></figure>
-								<div class="overlay"><a href="{{service.get_absolute_url}}" class="read-more"><i class="fa fa-long-arrow-alt-right"></i></a></div>
-							</div>
-							<div class="lower-content">
-								<a href="{{service.get_absolute_url}}" class="read-more"><i class="fa fa-long-arrow-alt-right"></i></a>
-								<h5 class="title"><a href="{{service.get_absolute_url}}">{{service.service_name}}</a></h5>
-								<div class="text">{{service.sub_content}}</div>
-							</div>
-						</div>
-					</div>
-                    {% endfor %}
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End Services Section -->
 
 
 	<!-- Courses Section Three -->
@@ -268,6 +234,45 @@
     </div>
 </section>
 <!--End Countries Section Two -->
+
+
+    <!-- Services Section -->
+	<section class="training-section">
+		<div class="bg bg-pattern-2"></div>
+		<div class="bg bg-image" style="background-image: url({% static 'web/images/resource/image-1.jpg' %})"></div>
+		<div class="auto-container">
+			<div class="sec-title">
+				<span class="sub-title">Our Services</span>
+				<h2>Elevate Your<br> Education Journey <span class="color3">with Our Services</span></h2>
+				<a href="{% url 'web:services' %}" class="theme-btn btn-style-two">Discover More</a>
+			</div>
+
+			<div class="carousel-outer">
+				<div class="training-carousel owl-carousel owl-theme">
+					
+                    <!-- Training Block -->
+                    {% for service in services %}
+					<div class="training-block">
+						<div class="inner-box">
+							<div class="image-box">
+								<figure class="image"><img src="{{service.cover_image.url}}" alt=""></figure>
+								<div class="overlay"><a href="{{service.get_absolute_url}}" class="read-more"><i class="fa fa-long-arrow-alt-right"></i></a></div>
+							</div>
+							<div class="lower-content">
+								<a href="{{service.get_absolute_url}}" class="read-more"><i class="fa fa-long-arrow-alt-right"></i></a>
+								<h5 class="title"><a href="{{service.get_absolute_url}}">{{service.service_name}}</a></h5>
+								<div class="text">{{service.sub_content}}</div>
+							</div>
+						</div>
+					</div>
+                    {% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Services Section -->
+
+
 
 <!-- Clients Section   -->
 {% comment %} <section class="clients-section">
