@@ -12712,3 +12712,11 @@ Sidebar
 .footer-bottom .copyright-text a:hover {
   color: #ffffff;
 }
+
+
+.content ul
+li {
+  list-style: initial;
+  padding: 0px;
+  margin: 0px;
+}
