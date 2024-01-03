@@ -202,7 +202,7 @@ var THEMEMASCOT = {};
 			navText: ['<span class="fa fa-long-arrow-alt-left"></span>', '<span class="fa fa-long-arrow-alt-right"></span>'],
 			responsive: {
 				0: {
-					items: 1
+					items: 2
 				},
 				380: {
 					items: 2,

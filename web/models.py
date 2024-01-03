@@ -188,3 +188,14 @@ class Faq(models.Model):
 
     def __str__(self):
         return str(self.question)
+    
+class Gallery(models.Model):
+    image = VersatileImageField("Gallery Image",  upload_to="gallery/",ppoi_field="ppoi")
+    ppoi = PPOIField(("Image PPOI"))
+    title = models.CharField(max_length=50, blank=True, null=True)
+
+    class Meta:
+        verbose_name_plural = ("Gallery")
+
+    def __str__(self):
+        return str(self.title)
