@@ -726,7 +726,7 @@ li {
   margin-top: -60px;
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: url(../images/icons/preloader.gif);
+  background-image: url(../images/edbrowsefooterlogo.png);
   background-size: 200px;
   content: "";
 }
@@ -1534,8 +1534,8 @@ Scroll To Top style
 .btn-style-one {
   position: relative;
   font-size: 14px;
-  line-height: 30px;
-  padding: 10px 40px;
+  line-height: 25px;
+  padding: 10px 20px;
   font-weight: 700;
   overflow: hidden;
   color: #ffffff;
@@ -3122,7 +3122,7 @@ Sticky Header
   height: 100%;
   max-height: 100%;
   overflow-y: auto;
-  background: var(--bg-theme-color1);
+  background: white;
   padding: 0px 0px;
   z-index: 5;
   opacity: 0;
@@ -3185,7 +3185,7 @@ Sticky Header
   line-height: 24px;
   padding: 10px 20px;
   font-size: 16px;
-  color: #ffffff;
+  color: #000000;
   font-weight: 400;
   text-transform: capitalize;
 }
@@ -3201,7 +3201,7 @@ Sticky Header
   text-align: center;
   font-size: 16px;
   line-height: 44px;
-  color: #ffffff;
+  color: #000000;
   cursor: pointer;
   z-index: 5;
 }
@@ -3243,10 +3243,10 @@ Sticky Header
   padding-left: 54px;
   font-size: 14px;
   line-height: 24px;
-  color: #ffffff;
+  color: #000000;
 }
 .contact-list-one li .contact-info-box a {
-  color: #ffffff;
+  color: #000000;
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }
@@ -3261,7 +3261,7 @@ Sticky Header
 .contact-list-one li .contact-info-box .title {
   display: block;
   font-size: 12px;
-  color: #b2c1c0;
+  color: #000000;
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -3277,7 +3277,7 @@ Sticky Header
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background: var(--bg-theme-color1);
+  background: white;
   width: 100%;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: auto;
@@ -3437,12 +3437,12 @@ Section Title
 }
 @media only screen and (max-width: 599px) {
   .main-slider h1 {
-    font-size: 48px;
+    font-size: 36px;
   }
 }
 @media only screen and (max-width: 424px) {
   .main-slider h1 {
-    font-size: 38px;
+    font-size: 28px;
     line-height: 1.1em;
   }
 }
@@ -3454,7 +3454,7 @@ Section Title
 @media only screen and (max-width: 767px) {
   .main-slider .text {
     font-size: 16px;
-    line-height: 24px;
+    line-height: 15px;
   }
 }
 .main-slider .btn-box {
@@ -4605,6 +4605,7 @@ Section Title
 .about-section-three .content-column {
   position: relative;
   margin-bottom: 50px;
+  margin-top: 20px;
   z-index: 1;
 }
 .about-section-three .content-column .inner-column {
@@ -5375,7 +5376,7 @@ Section Title
 ***/
 .training-section {
   position: relative;
-  padding: 120px 0;
+  padding: 50px 0;
 }
 .training-section .sec-title {
   padding-left: 300px;
@@ -6126,7 +6127,7 @@ Section Title
 }
 .country-block .theme-btn {
   position: relative;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 30px;
   padding: 10px 13px;
   text-align: center;
@@ -7718,7 +7719,7 @@ Section Title
 ***/
 .news-section {
   position: relative;
-  padding: 120px 0 70px;
+  padding: 120px 0 30px;
   overflow: hidden;
 }
 
@@ -9721,7 +9722,8 @@ Page Title
 }
 @media only screen and (max-width: 768px) {
   .page-title {
-    padding: 110px 0 110px;
+    padding: 60px 0 60px;
+    /* padding: 110px 0 110px; */
   }
 }
 .page-title:before {
@@ -12719,4 +12721,30 @@ li {
   list-style: initial;
   padding: 0px;
   margin: 0px;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  .core-values-d .service-sidebar .banner-widget .widget-content {
+   
+    display: none
+}
+
+.core-values-font h2{
+  font-size: 30px;
+}  
+
+.core-values-font h3{
+  font-size: 20px;
+} 
+
+.country-font .blog-details__title{
+  font-size: 25px;
+}
+
+.course-font h2{
+  font-size: 27px;
+}
+
 }
