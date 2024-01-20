@@ -1,0 +1,51 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+  <!-- Start main-content -->
+  <section class="page-title" style="background-image: url({% static 'web/images/background/hats.jpg' %});">
+    <div class="auto-container">
+      <div class="title-outer">
+        <h1 class="title">Alumini Details</h1>
+        <ul class="page-breadcrumb">
+          <li>
+            <a href="{% url 'web:index' %}">Home</a>
+          </li>
+          <li>Alumini Details</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- end main-content -->
+
+  <!-- Team Details Start -->
+  <section class="team-details">
+    <div class="container pb-100">
+      <div class="team-details__top pb-70">
+        <div class="row">
+          <div class="col-xl-6 col-lg-6">
+            <div class="team-details__top-left">
+              <div class="team-details__top-img">
+                <img src="{{ alumini.image.url }}" alt="" />
+                <div class="team-details__big-text"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6">
+            <div class="team-details__top-right">
+              <div class="team-details__top-content">
+                <h3 class="team-details__top-name">{{ alumini.name }}</h3>
+                <p class="team-details__top-title">{{ alumini.passout_year }}</p>
+                <!-- Social Links (if needed) -->
+                <p class="team-details__top-text-1">{{ alumini.sub_heading }}</p>
+                <p class="team-details__top-text-3">{{ alumini.content }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="team-details__bottom pt-100">
+      </div>
+    </div>
+  </section>
+  <!-- Team Details End -->
+{% endblock %}

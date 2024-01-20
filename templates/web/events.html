@@ -1,48 +1,51 @@
-{% extends 'web/base.html' %} 
-{% load static %} 
+{% extends 'web/base.html' %}
+{% load static %}
 {% block content %}
+  <!-- Start main-content -->
+  <section class="page-title" style="background-image: url({% static 'web/images/background/page-title.jpg' %});">
+    <div class="auto-container">
+      <div class="title-outer">
+        <h1 class="title">Events</h1>
+        <ul class="page-breadcrumb">
+          <li>
+            <a href="{% url 'web:index' %}">Home</a>
+          </li>
+          <li>Events</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- end main-content -->
 
-	<!-- Start main-content -->
-	<section class="page-title" style="background-image: url({% static 'web/images/background/page-title.jpg' %});">
-		<div class="auto-container">
-			<div class="title-outer">
-				<h1 class="title">Events</h1>
-				<ul class="page-breadcrumb">
-					<li><a href="index.html">Home</a></li>
-					<li>Events</li>
-				</ul>
-			</div>
-		</div>
-	</section>
-	<!-- end main-content -->
-
-	<!-- News Section -->
-	<section class="news-section">
-		<div class="auto-container">	
-			<div class="row">
-				{% for event in events %}
-				<!-- News Block -->
-				<div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-					<div class="inner-box">
-						<div class="image-box">
-							<figure class="image"><a href="{{event.get_absolute_url}}"><img src="{% static 'web/images/resource/news-1.jpg' %}" alt=""></a></figure>
-							
-						</div>
-						<div class="lower-content">
-							<ul class="post-info">
-								<li><i class="fa fa-clock"></i>{{event.date}} - {{event.time}} </li>
-								<li><i class="fa fa-calendar-check"></i>{{event.location}}</li>
-							</ul>
-							<h4 class="title"><a href="{{event.get_absolute_url}}">{{event.title}}</a></h4>
-						</div>
-					</div>
-				</div>
-				{% endfor %}
-			</div>
-		</div>
-	</section>
-	<!--End News Section -->
-
-
-
+  <!-- News Section -->
+  <section class="news-section">
+    <div class="auto-container">
+      <div class="row">
+        {% for event in events %}
+          <!-- News Block -->
+          <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
+            <div class="inner-box">
+              <div class="image-box">
+                <figure class="image">
+                  <a href="{{ event.get_absolute_url }}"><img src="{% static 'web/images/resource/news-1.jpg' %}" alt="" /></a>
+                </figure>
+              </div>
+              <div class="lower-content">
+                <ul class="post-info">
+                  <li>
+                    <i class="fa fa-clock"></i>{{ event.date }} - {{ event.time }}
+                  </li>
+                  <li>
+                    <i class="fa fa-calendar-check"></i>{{ event.location }}
+                  </li>
+                </ul>
+                <h4 class="title"><a href="{{ event.get_absolute_url }}">{{ event.title }}</a></h4>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!-- End News Section -->
 {% endblock %}

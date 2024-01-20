@@ -2303,6 +2303,9 @@ Main Header
   margin-top: 0;
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
+  max-height: 360px;
+  overflow-y: scroll;
+  width: 230px;
 }
 
 .main-menu .navigation > li > ul {
@@ -2311,7 +2314,7 @@ Main Header
   top: 100%;
   width: 220px;
   z-index: 100;
-  padding: 10px 0 0;
+  padding: 15px 0 0;
   background-color: #ffffff;
   margin-top: 30px;
   opacity: 0;
@@ -4849,7 +4852,7 @@ Section Title
 }
 .service-block .image-box .image img {
   width: 100%;
-  min-height: 248px;
+  /* min-height: 248px; */
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -7644,7 +7647,7 @@ Section Title
   background-position: center;
   background-size: cover;
   background-image: url(../images/icons/shape-8.png);
-  content: "";
+  /* content: ""; */
 }
 .contact-form .form-group {
   position: relative;

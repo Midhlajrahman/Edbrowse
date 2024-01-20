@@ -1,153 +1,125 @@
-{% extends 'web/base.html' %} 
-{% load static %} 
+{% extends 'web/base.html' %}
+{% load static %}
 {% block content %}
+  <!-- Start main-content -->
+  <section class="page-title" style="background-image: url({{ course_detail.cover_image.url }});">
+    <div class="auto-container">
+      <div class="title-outer">
+        <h1 class="title">{{ course_detail.course_name }}</h1>
+        <ul class="page-breadcrumb">
+          <li>
+            <a href="{% url 'web:index' %}">Home</a>
+          </li>
+          <li>Course</li>
+          <li>{{ course_detail.course_name }}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- end main-content -->
 
 
-	<!-- Start main-content -->
-	<section class="page-title" style="background-image: url({{course_detail.cover_image.url}});">
-		<div class="auto-container">
-			<div class="title-outer">
-				<h1 class="title">{{course_detail.course_name}}</h1>
-				<ul class="page-breadcrumb">
-					<li><a href="index.html">Home</a></li>
-					<li>Course</li>
-					<li>{{course_detail.course_name}}</li>
-				</ul>
-			</div>
-		</div>
-	</section>
-	<!-- end main-content -->
+  <section class="blog-details course-font">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-7 col-lg-7">
+          <div class="blog-details__left">
+            <div class="blog-details__img">
+              <img src="{{ course_detail.cover_image.url }}" alt="" />
+            </div>
 
-	<!--Start Services Details-->
-	
+            <div class="blog-details__content">
+              <h2 class="mt-4">{{ course_detail.course_name }}</h2>
 
-	<section class="blog-details course-font">
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-7 col-lg-7">
-					<div class="blog-details__left">
-	
-						<div class="blog-details__img">
-							<img src="{{course_detail.cover_image.url}}" alt="">
-						</div>
+              <div class="services-details__content">
+                <div class="feature-list">
+                  <h5 class="mt-5">Course Name</h5>
+                  <div class="col-xl-7 col-lg-7">
+                    {% for sub_course_obj in sub_course %}
+                      <div class="single-item">
+                        <div class="icon-box">
+                          <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h6 class="title">{{ sub_course_obj.sub_course|safe }}</h6>
+                      </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-5 col-lg-5">
+          <div class="sidebar">
+              <div class="div contact-form">
+                <h1 class="sidebar__title">Enquiry Form</h1>
 
-						<div class="blog-details__content">
-							<h2 class="mt-4">{{course_detail.course_name}}</h2>
-							
-							<div class="content">{{course_detail.content|safe}}</div>
-						</div>
-	
-					</div>
-				</div>
-				<div class="col-xl-5 col-lg-5">
-					<div class="sidebar">
-						
-						<div class="sidebar__single sidebar__post">
-							<h3 class="sidebar__title">Enquiry Form</h3>
-							<!-- Contact Form -->
-							<form id="contact_form" name="contact_form" class="form course" method="post">
-								{% csrf_token %}
-								<div class="row">
-									<div class="col-sm-6">
-										<div class="mb-3">
-											{{ form.full_name }}
-										</div>
-									</div>
-									<div class="col-sm-6">
-										<div class="mb-3">
-											{{ form.email }}
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-sm-12">
-										<div class="mb-3">
-											{{ form.phone }}
-										</div>
-									</div>
-								</div>
-							
-								<div class="row">
-									<div class="col-sm-12">
-										<div class="mb-3">
-											{{ form.current_education }}
-										</div>
-									</div>
-									<div class="col-sm-12">
-										<div class="mb-3">
-											{{ form.intended_study_abroad }}
-										</div>
-									</div>
-									<div class="col-sm-12">
-										<div class="mb-3">
-											{{ form.area_of_study_interest }}
-										</div>
-									</div>
-								</div>
-							
-								<div class="row">
-									<div class="col-sm-12">
-										<div class="mb-3">
-											{{ form.preferred_country }}
-										</div>
-									</div>
-									<div class="col-sm-12">
-										<div class="mb-3">
-											{{ form.preferred_university_or_region }}
-										</div>
-									</div>
-									<div class="col-sm-12">
-										<div class="mb-3">
-											{{ form.intended_course_of_study }}
-										</div>
-									</div>
-								</div>
-							
-								<div class="row">
-									<div class="col-sm-12">
-										<div class="mb-3">
-											{{ form.language_proficiency }}
-										</div>
-									</div>
-									<div class="col-sm-12">
-										<div class="mb-3">
-											{{ form.standardized_tests_taken }}
-										</div>
-									</div>
-									<div class="col-sm-12">
-										<div class="mb-3">
-											{{ form.financial_consideration }}
-										</div>
-									</div>
-								</div>
-							
-								<div class="row">
-									<div class="col-sm-6">
-										<div class="mb-3">
-											{{ form.message }}
-										</div>
-									</div>
-									<div class="col-sm-6">
-										<div class="mb-3">
-											{{ form.source }}
-										</div>
-									</div>
-								</div>
-							
-								<div class="mb-3">
-									<button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait..."><span class="btn-title">Submit</span></button>
-								</div>
-							</form>
-						<!-- Contact Form Validation-->
-						</div>
+                <form id="multi-step-form" method="post" class="ajax redirect contact-form" data-redirect="/">
+                  {% csrf_token %}
+                  <div class="progress px-1" style="height: 7px;">
+                    <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <div class="step-container d-flex justify-content-between">
+                    <div class="step-circle" onclick="displayStep(1)">1</div>
+                    <div class="step-circle" onclick="displayStep(2)">2</div>
+                    <div class="step-circle" onclick="displayStep(3)">3</div>
+                    <div class="step-circle" onclick="displayStep(4)">4</div>
+                    <div class="step-circle" onclick="displayStep(5)">5</div>
+                  </div>
 
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--End Services Details-->
+                  <div class="step step-1">
+                    <!-- Step 1 form fields here -->
+                    <h3>Personal Information</h3>
+                    <div class="mb-3">{{ form.full_name }}</div>
+                    <div class="mb-3">{{ form.email }}</div>
+                    <div class="mb-3">{{ form.phone }}</div>
+                    <button type="button" class="btn next-step btn-style-one">Next</button>
+                  </div>
 
+                  <div class="step step-2">
+                    <!-- Step 2 form fields here -->
+                    <h3>Educational backgrounds</h3>
+                    <div class="mb-3">{{ form.current_education }}</div>
+                    <div class="mb-3">{{ form.intended_study_abroad }}</div>
+                    <div class="mb-3">{{ form.area_of_study_interest }}</div>
+                    <button type="button" class="btn prev-step btn-style-one">Previous</button>
+                    <button type="button" class="btn next-step btn-style-one">Next</button>
+                  </div>
 
+                  <div class="step step-3">
+                    <!-- Step 3 form fields here -->
+                    <h3>Study Abroad Preference</h3>
+                    <div class="mb-3">{{ form.preferred_country }}</div>
+                    <div class="mb-3">{{ form.preferred_university_or_region }}</div>
+                    <div class="mb-3">{{ form.intended_course_of_study }}</div>
+                    <button type="button" class="btn prev-step btn-style-one">Previous</button>
+                    <button type="button" class="btn next-step btn-style-one">Next</button>
+                  </div>
 
+                  <div class="step step-4">
+                    <!-- Step 4 form fields here -->
+                    <h3>Testing and Financing</h3>
+                    <div class="mb-3">{{ form.language_proficiency }}</div>
+                    <div class="mb-3">{{ form.standardized_tests_taken }}</div>
+                    <div class="mb-3">{{ form.financial_consideration }}</div>
+                    <button type="button" class="btn prev-step btn-style-one">Previous</button>
+                    <button type="button" class="btn next-step btn-style-one">Next</button>
+                  </div>
+
+                  <div class="step step-5">
+                    <!-- Step 5 form fields here -->
+                    <h3>Additional Information</h3>
+                    <div class="mb-3">{{ form.message }}</div>
+                    <div class="mb-3">{{ form.source }}</div>
+                    <button type="button" class="btn prev-step btn-style-one">Previous</button>
+                    <button type="submit" class="btn btn-success btn-style-one">Submit</button>
+                  </div>
+                </form>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Services Details -->
 {% endblock %}

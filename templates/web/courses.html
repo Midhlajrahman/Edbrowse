@@ -1,53 +1,50 @@
-{% extends 'web/base.html' %} 
-{% load static %} 
+{% extends 'web/base.html' %}
+{% load static %}
 {% block content %}
+  <!-- Start main-content -->
+  <section class="page-title" style="background-image: url({% static 'web/images/background/page-title.jpg' %});">
+    <div class="auto-container">
+      <div class="title-outer">
+        <h1 class="title">Courses</h1>
+        <ul class="page-breadcrumb">
+          <li>
+            <a href="{% url 'web:index' %}">Home</a>
+          </li>
+          <li>Courses</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- end main-content -->
 
+  <!-- Services Section -->
+  <section class="">
+    <div class="container pb-90">
+      <div class="row">
+        {% for course in courses %}
+          <!-- Service Block -->
+          <div class="service-block col-lg-4 col-md-6 col-sm-12">
+            <div class="inner-box">
+              <div class="image-box">
+                <figure class="image">
+                  <a href="{{ course.get_absolute_url }}"><img src="{{ course.cover_image.url }}" alt="" /></a>
+                </figure>
 
-	<!-- Start main-content -->
-	<section class="page-title" style="background-image: url({% static 'web/images/background/page-title.jpg' %});">
-		<div class="auto-container">
-			<div class="title-outer">
-				<h1 class="title">Courses</h1>
-				<ul class="page-breadcrumb">
-					<li><a href="">Home</a></li>
-					<li>Courses</li>
-				</ul>
-			</div>
-		</div>
-	</section>
-	<!-- end main-content -->
+                <h6 class="title">{{ course.course_name }}</h6>
+              </div>
+              <div class="content-box">
+                <h6 class="title"><a href="{{ course.get_absolute_url }}">{{ course.course_name }}</a></h6>
 
-	<!-- Services Section -->
-	<section class="">
-		<div class="container pb-90">
-
-			<div class="row">
-				{% for course in courses %}
-				<!-- Service Block -->
-				<div class="service-block col-lg-4 col-md-6 col-sm-12">
-					<div class="inner-box">
-						<div class="image-box">
-							<figure class="image"><a href="{{course.get_absolute_url}}"><img src="{{course.cover_image.url}}" alt=""></a></figure>
-							
-							<h6 class="title">{{course.course_name}}</h6>
-						</div>
-						<div class="content-box">
-							<h6 class="title"><a href="{{course.get_absolute_url}}">{{course.course_name}}</a></h6>
-							
-							<a href="{{course.get_absolute_url}}" class="read-more">More <i class="fa fa-long-arrow-right"></i></a>
-						</div>
-					</div>
-				</div>
-				{% endfor %}
-			</div>
-		</div>
-	</section>
-	<!-- End Services Section-->
-
-
-
-
-
-
-
+                <a href="{{ course.get_absolute_url }}" class="read-more">More <i class="fa fa-long-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <p class="mt-5">
+        Edbrowse is committed to providing a diverse and enriching educational experience. Whether you're pursuing undergraduate or postgraduate studies, we have the right courses to propel you toward success. <a href="{% url 'web:contact' %}" style="color: #0067a7;">Contact us</a> to explore the courses best suited for your academic journey.
+      </p>
+    </div>
+  </section>
+  <!-- End Services Section -->
 {% endblock %}

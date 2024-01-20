@@ -3,12 +3,12 @@
 {% block content %}
 
 <!-- Start main-content -->
-<section class="page-title" style="background-image: url({% static 'web/images/background/page-title.jpg' %});">
+<section class="page-title" style="background-image: url({% static 'web/images/background/country3d-scaled.jpg' %});">
     <div class="auto-container">
         <div class="title-outer">
             <h1 class="title">Study Abroad Countries</h1>
             <ul class="page-breadcrumb">
-                <li><a href="">Home</a></li>
+                <li><a href="{% url "web:index" %}">Home</a></li>
                 <li>Countries</li>
             </ul>
         </div>
@@ -19,20 +19,7 @@
 <!-- Section -->
 <section>
     <div class="container">
-        <div class="row g-3">
-           {% for country in countries %}
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <!-- Country Block -->
-                <div class="country-block">
-                    <div class="inner-box">
-                        <div class="flag"><img src="{{country.country_image.url}}" alt=""></div>
-                        <a href="{{country.get_absolute_url}}" class="theme-btn">{{country.country_name}}</a>
-                    </div>                        
-                </div>
-            </div>
-            {% endfor %}
-        </idv>
-    </div>
+        {% include "web/partials/country.html" %}
 </section>
 <!-- End Gallery Section -->
 {% endblock %}

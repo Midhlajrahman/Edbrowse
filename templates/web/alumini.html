@@ -1,0 +1,45 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+  <!-- Start main-content -->
+  <section class="page-title" style="background-image: url({% static 'web/images/background/hats.jpg' %});">
+    <div class="auto-container">
+      <div class="title-outer">
+        <h1 class="title">Alumini</h1>
+        <ul class="page-breadcrumb">
+          <li>
+            <a href="{% url 'web:index' %}">Home</a>
+          </li>
+          <li>Alumini</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- end main-content -->
+
+  <!-- Team Section -->
+  <section class="team-section pb-60">
+    <div class="auto-container">
+      <div class="row">
+        <!-- Team block -->
+        {% for a in alumini %}
+          <div class="team-block col-lg-3 col-md-4 col-sm-12 wow fadeInUp body-div">
+            <div class="inner-box">
+              <div class="image-box">
+                <figure class="image">
+                  <a href="{{ a.get_absolute_url }}"><img src="{{ a.image.url }}" alt="" /></a>
+                </figure>
+              </div>
+              <div class="info-box">
+                <span class="designation">{{ a.passout_year }}</span>
+                <h4 class="name"><a href="{{ a.get_absolute_url }}">{{ a.name }}</a></h4>
+                <p>{{ a.content|truncatechars:28 }}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!-- End Team Section -->
+{% endblock %}

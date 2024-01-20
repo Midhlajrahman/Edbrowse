@@ -1,383 +1,252 @@
-{% extends 'web/base.html' %} 
-{% load static %} 
+{% extends 'web/base.html' %}
+{% load static %}
 {% block content %}
-
-	<!-- Start main-content -->
-	<section class="page-title" style="background-image: url({% static 'web/images/background/page-title.jpg' %});">
-		<div class="auto-container">
-			<div class="title-outer">
-				<h1 class="title">About Us</h1>
-				<ul class="page-breadcrumb">
-					<li><a href="">Home</a></li>
-					
-					<li>About</li>
-				</ul>
-			</div>
-		</div>
-	</section>
-	<!-- end main-content -->
-
-<!-- About Section Three -->
-<section class="about-section-three pull-down">
-    <div class="bg"></div>
+  <!-- Start main-content -->
+  <section class="page-title" style="background-image: url({% static 'web/images/background/page-title.jpg' %});">
     <div class="auto-container">
-        <div class="row">
-            <div class="content-column col-xl-6 col-lg-7 col-md-12 col-sm-12 order-2 wow fadeInRight" data-wow-delay="600ms">
-                <div class="inner-column">
-                    <div class="sec-title">
-                        <span class="sub-title">about the company</span>
-                        <h2>Empowering Global Minds,  <br>Building Future  <span class="color3">Leaders</span></h2>
-                        <div class="text">Welcome to Edbrowse, a trusted name in the realm of overseas education consultancy with a legacy spanning over 13 years. Our journey began with a vision to empower students to achieve their educational dreams, and today, we stand as a beacon of guidance and support in the field.</div>
-                    </div>
-
-            
-                    <div class="bottom-box">
-                       
-                        
-                        <a href="{% url 'web:about' %}" class="theme-btn btn-style-one hvr-dark"><span class="btn-title">Explore More</span></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Image Column -->
-            <div class="image-column col-xl-6 col-lg-5 col-md-12 col-sm-12">
-                <div class="inner-column">
-                    <div class="image-box">
-                       
-                        <figure class="image-1 overlay-anim wow fadeInRight"><img src="{% static 'web/images/resource/about-7.jpg' %}" alt=""></figure>
-                        <figure class="image-2 overlay-anim wow fadeInRight"><img src="{% static 'web/images/resource/about-8.jpg' %}" alt=""></figure>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="title-outer">
+        <h1 class="title">About Us</h1>
+        <ul class="page-breadcrumb">
+          <li>
+            <a href="{% url 'web:index' %}">Home</a>
+          </li>
+          <li>About</li>
+        </ul>
+      </div>
     </div>
-</section>
-<!--Emd About Section Three -->
-	
-<!-- Why Choose US -->
-<section class="why-choose-us pt-0">
-    <div class="bg bg-pattern-1"></div>
+  </section>
+  <!-- end main-content -->
 
-    <div class="auto-container">
-        <div class="sec-title text-center">
-            <span class="sub-title">Why Choose Edbrowse</span>
-            <h2>A Consultancy with a <span class="color3">Futuristic Vision</span></h2>
-        </div>
+  {% include 'web/partials/about.html' %}
 
-        <div class="row">
-            <!-- Features Block -->
-            <div class="feature-block col-xl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp">
-                <div class="inner-box">
-                    <i class="icon flaticon-interview"></i>
-                    
-                    <h6 class="title"><a href="#">13 Years of Experience</a></h6>
-                </div>
-            </div>
+  {% include 'web/partials/whychoose.html' %}
 
-            <!-- Features Block -->
-            <div class="feature-block col-xl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="300ms">
-                <div class="inner-box">
-                    <div class="content">
-                        <i class="icon flaticon-low-cost"></i>
-                        
-                        <h6 class="title"><a href="#">Dedicated Success Team</a></h6>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Features Block -->
-            <div class="feature-block col-xl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="600ms">
-                <div class="inner-box">
-                    <div class="content">
-                        <i class="icon flaticon-loyalty"></i>
-                        
-                        <h6 class="title"><a href="#">Worldwide Partnerships</a></h6>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Features Block -->
-            <div class="feature-block col-xl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="900ms">
-                <div class="inner-box">
-                    <div class="content">
-                        <i class="icon flaticon-online-support"></i>
-                        
-                        <h6 class="title"><a href="#">End-to-End Assistance</a></h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="bottom-text">Over 13 years of dedicated service in the field of overseas education consultancy. <a href="#" class="theme-btn btn-style-two">Discover More</a></div>
-    </div>
-</section>
-<!--Emd Why Choose US -->
-
-<!-- Why Choose US -->
-<section class="why-choose-us-two">
+  <!-- Why Choose US -->
+  <section class="why-choose-us-two">
     <div class="bg bg-image" style="background-image: url({% static 'web/images/background/3.jpg' %})"></div>
     <div class="bg bg-pattern-5"></div>
 
-    <div class="auto-container">            
-        <div class="row g-0">
-            <!-- Title Column -->
-            <div class="title-column col-xl-4 col-lg-12 col-md-12 col-sm-12">
-                <div class="inner-column wow fadeInLeft">
-                    <div class="sec-title light">
-                        <h2>Services<br> We Offer</h2>
-                    </div>
-                    <a href="{% url 'web:services' %}" class="theme-btn btn-style-four small">Read More</a>
-                </div>
+    <div class="auto-container">
+      <div class="row g-0">
+        <!-- Title Column -->
+        <div class="title-column col-xl-4 col-lg-12 col-md-12 col-sm-12">
+          <div class="inner-column wow fadeInLeft">
+            <div class="sec-title light">
+              <h2>Services<br /> We Offer</h2>
             </div>
-
-            <!-- Content Column -->
-            <div class="content-column col-xl-8 col-lg-12 col-ms-12 col-sm-12">
-                <div class="row g-0">
-                    <!-- Features Block Three -->
-                    <div class="feature-block-three col-lg-6 col-md-6 col-sm-12 wow fadeInUp">
-                        <div class="inner-box">
-                            <i class="icon flaticon-interview"></i>
-                            <i class="bg-icon flaticon-interview"></i>
-                            <h6 class="title"><a href="#">Study Abroad<br> Consultation</a></h6>
-                            <div class="text">Our team of experienced counselors and advisors work closely with you to identify your academic and career goals, offering personalized guidance and support.</div>
-                        </div>
-                    </div>
-
-                    <!-- Features Block Three -->
-                    <div class="feature-block-three col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="inner-box">
-                            <i class="icon flaticon-visa-3"></i>
-                            <i class="bg-icon flaticon-visa-3"></i>
-                            <h6 class="title"><a href="#">Visa Assistance</a></h6>
-                            <div class="text">Navigating the visa application process can be complex. We provide thorough assistance to ensure a smooth application experience.
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Features Block Three -->
-                    <div class="feature-block-three col-lg-6 col-md-6 col-sm-12 wow fadeInUp">
-                        <div class="inner-box">
-                            <i class="icon flaticon-loyalty"></i>
-                            <i class="bg-icon flaticon-loyalty"></i>
-                            <h6 class="title"><a href="#">Test Preparation</a></h6>
-                            <div class="text">Whether it's IELTS, TOEFL, GRE, or GMAT, we offer expert guidance and resources to help you excel in your standardized tests.</div>
-                        </div>
-                    </div>
-
-                    <!-- Features Block Three -->
-                    <div class="feature-block-three col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="inner-box">
-                            <i class="icon flaticon-document"></i>
-                            <i class="bg-icon flaticon-document"></i>
-                            <h6 class="title"><a href="#">Cultural Immersion <br>Programs</a></h6>
-                            <div class="text">We understand that studying abroad is not just about academics. Our cultural immersion programs enrich your experience, allowing you to make lifelong connections.</div>
-                        </div>
-                    </div>
-
-                </div>    
-            </div>
+            <a href="{% url 'web:services' %}" class="theme-btn btn-style-four small">Read More</a>
+          </div>
         </div>
-    </div>
-</section>
-<!--Emd Why Choose US -->
 
-
-
-	<!-- Training Section  -->
-	<section class="training-section">
-		<div class="bg bg-pattern-2"></div>
-		<div class="bg bg-image" style="background-image: url({% static 'web/images/resource/image-1.jpg' %})"></div>
-		<div class="auto-container">
-			<div class="sec-title">
-				<span class="sub-title">Why Choose Edbrowse</span>
-				<h2>Reasons to Choose us<br> for Your<span class="color3"> Educational Journey </span></h2>
-				
-			</div>
-
-			<div class="carousel-outer">
-				<div class="training-carousel owl-carousel owl-theme">
-					<!-- Training Block -->
-					<div class="training-block">
-						<div class="inner-box">
-							
-							<div class="lower-content">
-								
-								<h5 class="title"><a href="#">13 Years of Experience</a></h5>
-								<div class="text">Edbrowse takes pride in over 13 years of dedicated service in the field of overseas education consultancy. Our experience is your advantage, ensuring that you benefit from a team with a deep understanding of the intricacies of studying abroad.</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Training Block -->
-					<div class="training-block">
-						<div class="inner-box">
-							
-							<div class="lower-content">	
-								<h5 class="title"><a href="#">Dedicated Success Team</a></h5>
-								<div class="text">Our team is committed to your success. With a wealth of knowledge and expertise, our counselors and advisors are passionate about guiding you towards the best educational opportunities that align with your goals.</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Training Block -->
-					<div class="training-block">
-						<div class="inner-box">
-							
-							<div class="lower-content">
-								
-								<h5 class="title"><a href="#">Worldwide Partnerships</a></h5>
-								<div class="text">Edbrowse has cultivated strong relationships with universities and colleges worldwide. This extensive global network opens doors to a diverse range of education options, providing you with the flexibility to choose the best fit for your academic journey.</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Training Block -->
-					<div class="training-block">
-						<div class="inner-box">
-							
-							<div class="lower-content">
-								
-								<h5 class="title"><a href="#">International Opportunities</a></h5>
-								<div class="text">Our global network ensures that you have access to a wide spectrum of programs, allowing you to explore educational opportunities in various countries and institutions.</div>
-							</div>
-						</div>
-					</div>
-
-                    <div class="training-block">
-						<div class="inner-box">
-							
-							<div class="lower-content">
-								
-								<h5 class="title"><a href="#">Academic Guidance</a></h5>
-								<div class="text">From helping you choose the right courses to assisting with university selection, our services cover every aspect of academic guidance. We ensure that your educational path aligns seamlessly with your aspirations.</div>
-							</div>
-						</div>
-					</div>
-
-                    <div class="training-block">
-						<div class="inner-box">
-							
-							<div class="lower-content">
-								
-								<h5 class="title"><a href="#">Post-Arrival Support</a></h5>
-								<div class="text">Edbrowse is with you every step of the way, even after your arrival. Our comprehensive support extends to accommodation assistance, visa processing, and job placement, ensuring a smooth transition and a fulfilling study abroad experience.</div>
-							</div>
-						</div>
-					</div>
-
-                    <div class="training-block">
-						<div class="inner-box">
-							
-							<div class="lower-content">
-								
-								<h5 class="title"><a href="#">End-to-End Assistance</a></h5>
-								<div class="text">We understand that studying abroad involves a multitude of steps. That's why our services span the entire study abroad journey, offering you a holistic approach that covers all aspects of your educational experience.</div>
-							</div>
-						</div>
-					</div>
-
-                    
-
-
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End Training Section -->
-
-
-
-
-
-	<!-- About Section Three -->
-	<section class="about-section-three pull-down" style="padding-bottom:40px!important" >
-		<div class="bg"></div>
-		<div class="auto-container">
-			<div class="row">
-				<div class="content-column col-xl-6 col-lg-7 col-md-12 col-sm-12 order-2 wow fadeInRight" data-wow-delay="600ms">
-					<div class="inner-column">
-						<div class="sec-title">
-							<span class="sub-title">How We Make a Difference</span>
-							<h2>Our Mission & Vision: <br><span class="color3">Inspiring Success</span></h2>
-							</div>
-
-						<div class="row">
-
-							<div class="info-box col-lg-6 col-md-6">
-								<div class="inner">
-									<h6 class="title"><i class="icon fa fa-circle-arrow-right"></i> Vision</h6>
-									<div class="text">At Edbrowse, we envision a world where education transcends borders, and every student has the opportunity to unlock their full potential. Our vision is to empower global minds, fostering a community of future leaders who contribute to the world's progress through the transformative power of education.</div>
-								</div>
-							</div>
-
-                            <div class="info-box col-lg-6 col-md-6">
-								<div class="inner">
-									<h6 class="title"><i class="icon fa fa-circle-arrow-right"></i> Mission</h6>
-									<div class="text">Our mission at Edbrowse is to be a beacon of guidance for students, transforming their educational dreams into tangible realities. We are committed to providing unparalleled support, personalized counseling, and a seamless pathway to global education.</div>
-								</div>
-							</div>
-                            
-						</div>
-
-						
-					</div>
-				</div>
-
-				<!-- Image Column -->
-				<div class="col-xl-6 col-lg-5 col-md-12 col-sm-12">
-					
-	
-						<div class="blog-details__img">
-							<img src="{% static 'web/images/resource/feature-1.jpg' %}" alt="">
-						</div>
-	
-					
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--Emd About Section Three -->
-
-
-<!--Start FAQ Details-->
-<section class="services-details">
-    <div class="container" style="padding-top:0px!important" >
-        <div class="row">
-            
-            <!--Start Services Details Content-->
-            <div class="col-xl-12 col-lg-12">
-                <div class="services-details__content">
-                    <div class=" mt-25">
-                        <h3>Frequently Asked Question</h3>
-                        <p></p>
-                        <ul class="accordion-box wow fadeInRight">
-                            <!--Block-->
-                            {% for faq in faqs %}
-                            <li class="accordion block {% if forloop.first %}active-block{% endif %}">
-                                <div class="acc-btn {% if forloop.first %}active{% endif %}">{{ faq.question }}
-
-                                    <div class="icon fa fa-plus"></div>
-                                </div>
-                                <div class="acc-content {% if forloop.first %}current{% endif %}">
-                                    <div class="content">
-                                        <div class="text">{{ faq.answer }}</div>
-                                    </div>
-                                </div>
-                            </li>
-                            {% endfor %}
-                            <!--Block-->
-                            
-                        </ul>
-                    </div>
-                </div>
+        <!-- Content Column -->
+        <div class="content-column col-xl-8 col-lg-12 col-ms-12 col-sm-12">
+          <div class="row g-0">
+            <!-- Features Block Three -->
+            <div class="feature-block-three col-lg-6 col-md-6 col-sm-12 wow fadeInUp">
+              <div class="inner-box">
+                <i class="icon flaticon-interview"></i>
+                <i class="bg-icon flaticon-interview"></i>
+                <h6 class="title"><a href="#">Study Abroad<br /> Consultation</a></h6>
+                <div class="text">Our team of experienced counselors and advisors work closely with you to identify your academic and career goals, offering personalized guidance and support.</div>
+              </div>
             </div>
-            <!--End Services Details Content-->
+
+            <!-- Features Block Three -->
+            <div class="feature-block-three col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="300ms">
+              <div class="inner-box">
+                <i class="icon flaticon-visa-3"></i>
+                <i class="bg-icon flaticon-visa-3"></i>
+                <h6 class="title"><a href="#">Visa Assistance</a></h6>
+                <div class="text">Navigating the visa application process can be complex. We provide thorough assistance to ensure a smooth application experience.</div>
+              </div>
+            </div>
+
+            <!-- Features Block Three -->
+            <div class="feature-block-three col-lg-6 col-md-6 col-sm-12 wow fadeInUp">
+              <div class="inner-box">
+                <i class="icon flaticon-loyalty"></i>
+                <i class="bg-icon flaticon-loyalty"></i>
+                <h6 class="title"><a href="#">Test Preparation</a></h6>
+                <div class="text">Whether it's IELTS, TOEFL, GRE, or GMAT, we offer expert guidance and resources to help you excel in your standardized tests.</div>
+              </div>
+            </div>
+
+            <!-- Features Block Three -->
+            <div class="feature-block-three col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="300ms">
+              <div class="inner-box">
+                <i class="icon flaticon-document"></i>
+                <i class="bg-icon flaticon-document"></i>
+                <h6 class="title"><a href="#">Cultural Immersion <br />Programs</a></h6>
+                <div class="text">We understand that studying abroad is not just about academics. Our cultural immersion programs enrich your experience, allowing you to make lifelong connections.</div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</section>
-<!--End FAQ Details-->   
+  </section>
+  <!-- Emd Why Choose US -->
 
+  <!-- Training Section -->
+  <section class="training-section">
+    <div class="bg bg-pattern-2"></div>
+    <div class="bg bg-image" style="background-image: url({% static 'web/images/resource/image-1.jpg' %})"></div>
+    <div class="auto-container">
+      <div class="sec-title">
+        <span class="sub-title">Why Choose Edbrowse</span>
+        <h2>Reasons to Choose us<br /> for Your<span class="color3">Educational Journey</span></h2>
+      </div>
 
+      <div class="carousel-outer">
+        <div class="training-carousel owl-carousel owl-theme">
+          <!-- Training Block -->
+          <div class="training-block">
+            <div class="inner-box">
+              <div class="lower-content">
+                <h5 class="title"><a href="#">13 Years of Experience</a></h5>
+                <div class="text">Edbrowse takes pride in over 13 years of dedicated service in the field of overseas education consultancy. Our experience is your advantage, ensuring that you benefit from a team with a deep understanding of the intricacies of studying abroad.</div>
+              </div>
+            </div>
+          </div>
 
+          <!-- Training Block -->
+          <div class="training-block">
+            <div class="inner-box">
+              <div class="lower-content">
+                <h5 class="title"><a href="#">Dedicated Success Team</a></h5>
+                <div class="text">Our team is committed to your success. With a wealth of knowledge and expertise, our counselors and advisors are passionate about guiding you towards the best educational opportunities that align with your goals.</div>
+              </div>
+            </div>
+          </div>
 
+          <!-- Training Block -->
+          <div class="training-block">
+            <div class="inner-box">
+              <div class="lower-content" style="
+                            padding: 27px !important;">
+                <h5 class="title"><a href="#">Worldwide Partnerships</a></h5>
+                <div class="text">Edbrowse has cultivated strong relationships with universities and colleges worldwide. This extensive global network opens doors to a diverse range of education options, providing you with the flexibility to choose the best fit for your academic journey.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Training Block -->
+          <div class="training-block">
+            <div class="inner-box">
+              <div class="lower-content" style=" padding: 28px 26px 58px!important;">
+                <h5 class="title"><a href="#">International Opportunities</a></h5>
+                <div class="text">Our global network ensures that you have access to a wide spectrum of programs, allowing you to explore educational opportunities in various countries and institutions.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="training-block">
+            <div class="inner-box">
+              <div class="lower-content">
+                <h5 class="title"><a href="#">Academic Guidance</a></h5>
+                <div class="text">From helping you choose the right courses to assisting with university selection, our services cover every aspect of academic guidance. We ensure that your educational path aligns seamlessly with your aspirations.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="training-block">
+            <div class="inner-box">
+              <div class="lower-content">
+                <h5 class="title"><a href="#">Post-Arrival Support</a></h5>
+                <div class="text">Edbrowse is with you every step of the way, even after your arrival. Our comprehensive support extends to accommodation assistance, visa processing, and job placement, ensuring a smooth transition and a fulfilling study abroad experience.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="training-block">
+            <div class="inner-box">
+              <div class="lower-content">
+                <h5 class="title"><a href="#">End-to-End Assistance</a></h5>
+                <div class="text">We understand that studying abroad involves a multitude of steps. That's why our services span the entire study abroad journey, offering you a holistic approach that covers all aspects of your educational experience.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Training Section -->
+
+  <!-- About Section Three -->
+  <section class="about-section-three pull-down" style="padding-bottom:40px!important">
+    <div class="bg"></div>
+    <div class="auto-container">
+      <div class="row">
+        <div class="content-column col-xl-6 col-lg-7 col-md-12 col-sm-12 order-2 wow fadeInRight" data-wow-delay="600ms">
+          <div class="inner-column">
+            <div class="sec-title">
+              <span class="sub-title">How We Make a Difference</span>
+              <h2>Our Mission & Vision: <br /><span class="color3">Inspiring Success</span></h2>
+            </div>
+
+            <div class="row">
+              <div class="info-box col-lg-6 col-md-6">
+                <div class="inner">
+                  <h6 class="title"><i class="icon fa fa-circle-arrow-right"></i> Vision</h6>
+                  <div class="text">At Edbrowse, we envision a world where education transcends borders, and every student has the opportunity to unlock their full potential. Our vision is to empower global minds, fostering a community of future leaders who contribute to the world's progress through the transformative power of education.</div>
+                </div>
+              </div>
+
+              <div class="info-box col-lg-6 col-md-6">
+                <div class="inner">
+                  <h6 class="title"><i class="icon fa fa-circle-arrow-right"></i> Mission</h6>
+                  <div class="text">Our mission at Edbrowse is to be a beacon of guidance for students, transforming their educational dreams into tangible realities. We are committed to providing unparalleled support, personalized counseling, and a seamless pathway to global education.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image Column -->
+        <div class="col-xl-6 col-lg-5 col-md-12 col-sm-12">
+          <div class="blog-details__img">
+            <img src="{% static 'web/images/resource/feature-1.jpg' %}" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Emd About Section Three -->
+
+  <!-- Start FAQ Details -->
+  <section class="services-details">
+    <div class="container" style="padding-top:0px!important">
+      <div class="row">
+        <!-- Start Services Details Content -->
+        <div class="col-xl-12 col-lg-12">
+          <div class="services-details__content">
+            <div class="mt-25">
+              <h3>Frequently Asked Question</h3>
+              <p></p>
+              <ul class="accordion-box wow fadeInRight">
+                <!-- Block -->
+                {% for faq in faqs %}
+                  <li class="accordion block {% if forloop.first %}{% endif %}">
+                    <div class="acc-btn {% if forloop.first %}{% endif %}">
+                      {{ faq.question }}
+
+                      <div class="icon fa fa-plus"></div>
+                    </div>
+                    <div class="acc-content {% if forloop.first %}{% endif %}">
+                      <div class="content">
+                        <div class="text">{{ faq.answer }}</div>
+                      </div>
+                    </div>
+                  </li>
+                {% endfor %}
+                <!-- Block -->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- End Services Details Content -->
+      </div>
+    </div>
+  </section>
+  <!-- End FAQ Details -->
 {% endblock %}

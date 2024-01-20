@@ -1,10 +1,13 @@
-from .models import Course
-from .models import Service
-from .models import Country
+from .models import Country, Course, Service
 
 
 def main_context(request):
     services = Service.objects.all()
-    countries = Country.objects.all()
+    nav_countries = Country.objects.all()
     courses = Course.objects.all()
-    return {"courses": courses, "countries": countries,"services": services, "domain": request.META["HTTP_HOST"]}
+    return {
+        "courses": courses,
+        "nav_countries": nav_countries,
+        "services": services,
+        "domain": request.META["HTTP_HOST"],
+    }

@@ -1,118 +1,107 @@
-{% extends 'web/base.html' %} 
-{% load static %} 
+{% extends 'web/base.html' %}
+{% load static %}
 {% block content %}
+  <!-- Start main-content -->
+  <section class="page-title" style="background-image: url({% static 'web/images/background/6.jpg' %});">
+    <div class="auto-container">
+      <div class="title-outer">
+        <h1 class="title">Core Values</h1>
+        <ul class="page-breadcrumb">
+          <li>
+            <a href="{% url 'web:index' %}">Home</a>
+          </li>
+          <li>
+            <a href="#">Core Values</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- end main-content -->
 
+  <!-- Start Services Details -->
+  <section class="services-details">
+    <div class="container">
+      <div class="row">
+        <!-- Start Services Details Content -->
+        <div class="col-xl-8 col-lg-8 core-values-font">
+          <div class="services-details__content">
+            <img src="{% static 'web/images/resource/service-details.jpg' %}" alt="" />
+            <h2 class="mt-4">Our Core Values</h2>
+            <p>Edbrowse was founded by a group of passionate educators who recognized the challenges students face in navigating the complex landscape of studying abroad. Fueled by a genuine desire to make a difference, our founders set out on a mission to provide personalized guidance and unwavering support to students on their educational journeys.</p>
 
-	<!-- Start main-content -->
-	<section class="page-title" style="background-image: url({% static 'web/images/background/6.jpg' %});">
-		<div class="auto-container">
-			<div class="title-outer">
-				<h1 class="title">Core Values</h1>
-				<ul class="page-breadcrumb">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Core Values</a></li>
-					
-				</ul>
-			</div>
-		</div>
-	</section>
-	<!-- end main-content -->
+            <div class="content mt-40">
+              <div class="text">
+                <h5>Integrity</h5>
+                <p>We uphold the highest standards of honesty and transparency in our interactions. Trust is the foundation of our relationships, and we are committed to maintaining the integrity of our services.</p>
+              </div>
 
-	<!--Start Services Details-->
-	<section class="services-details">
-		<div class="container">
-			<div class="row">
-				<!--Start Services Details Sidebar-->
-				<div class="col-xl-4 col-lg-4 core-values-d">
-					<div class="service-sidebar">
-						
-						<!--End Services Details Sidebar Single-->
-						<div class="sidebar-widget banner-widget">
+              <div class="text">
+                <h5>Expertise</h5>
+                <p>Our experienced team offers unparalleled knowledge and guidance to help you make informed decisions. We continuously invest in expanding our expertise to stay abreast of the latest developments in the education sector.</p>
+              </div>
 
-							
-						  <div class="widget-content" style="background-image: url({% static 'web/images/resource/contact.jpg' %});">
-							<div class="shape" style="background-image: url({% static 'web/images/resource/overlay-shape.png' %});"></div>
-							<div class="content-box">
-							  <h3>Discover the Edbrowse Advantage</h3>
-							  <a href="" class="theme-btn btn-style-one light"><span class="btn-title"> Contact us</span></a>
-							</div>
-						  </div>
-						</div>
+              <div class="text">
+                <h5>Global Exposure and Quality Life</h5>
+                <p>Our mission is to give students global exposure while enhancing their quality of life. We strive to connect students with opportunities that broaden their horizons, foster cultural understanding, and contribute to a well-rounded and fulfilling lifestyle.</p>
+              </div>
 
-					</div>
-				</div>
-				<!--End Services Details Sidebar-->
+              <div class="text">
+                <h5>Continuous Updating</h5>
+                <p>We are committed to continuous updating and improvement. The educational landscape is ever-evolving, and we ensure that our information, services, and guidance are always up-to-date. Our dedication to staying current guarantees that you receive the most relevant and accurate advice.</p>
+              </div>
 
-				<!--Start Services Details Content-->
-				<div class="col-xl-8 col-lg-8 core-values-font">
-					<div class="services-details__content">
-						<img src="{% static 'web/images/resource/service-details.jpg' %}" alt="" />
-						<h2 class="mt-4">Our Core Values</h2>
-						<p>Edbrowse was founded by a group of passionate educators who recognized the challenges students face in navigating the complex landscape of studying abroad. Fueled by a genuine desire to make a difference, our founders set out on a mission to provide personalized guidance and unwavering support to students on their educational journeys.</p>
-						
-						<div class="content mt-40">
-							<div class="text">
-								<h3>Integrity</h3>
-								<p>We uphold the highest standards of honesty and transparency in our interactions. Trust is the foundation of our relationships, and we are committed to maintaining the integrity of our services.</p>
-							</div>
+              <div class="text">
+                <h5>Student-Centric Approach</h5>
+                <p>Students are at the heart of what we do. Our services are tailored to meet the unique needs and aspirations of each student. We prioritize your goals and well-being, ensuring a personalized and student-centric approach in all our interactions.</p>
+              </div>
 
-                            <div class="text">
-								<h3>Expertise</h3>
-								<p>Our experienced team offers unparalleled knowledge and guidance to help you make informed decisions. We continuously invest in expanding our expertise to stay abreast of the latest developments in the education sector.</p>
-							</div>
+              <div class="text">
+                <h5>Community Engagement</h5>
+                <p>We actively engage with the student community, fostering connections and creating a supportive network. Our commitment to community engagement extends to collaborating with educational institutions, alumni, and partners to enhance the overall study abroad experience.</p>
+              </div>
 
-                            <div class="text">
-								<h3>Global Exposure and Quality Life</h3>
-								<p>Our mission is to give students global exposure while enhancing their quality of life. We strive to connect students with opportunities that broaden their horizons, foster cultural understanding, and contribute to a well-rounded and fulfilling lifestyle.</p>
-							</div>
-						
-                            <div class="text">
-								<h3>Continuous Updating</h3>
-								<p>We are committed to continuous updating and improvement. The educational landscape is ever-evolving, and we ensure that our information, services, and guidance are always up-to-date. Our dedication to staying current guarantees that you receive the most relevant and accurate advice.
-                                </p>
-							</div>
+              <div class="text">
+                <h5>Empowerment through Education</h5>
+                <p>We believe in the transformative power of education. Our goal is to empower students by providing access to quality education, equipping them with the knowledge and skills necessary for personal and professional success</p>
+              </div>
 
-                            <div class="text">
-								<h3>Student-Centric Approach</h3>
-								<p>Students are at the heart of what we do. Our services are tailored to meet the unique needs and aspirations of each student. We prioritize your goals and well-being, ensuring a personalized and student-centric approach in all our interactions.</p>
-							</div>
+              <div class="text">
+                <h5>Professional Customized Counseling</h5>
+                <p>Personalized counseling based on our extensive experience in International Student Programs. Tailored advice to match your academic goals, preferences, and career aspirations.</p>
+              </div>
 
-                            <div class="text">
-								<h3>Community Engagement</h3>
-								<p>We actively engage with the student community, fostering connections and creating a supportive network. Our commitment to community engagement extends to collaborating with educational institutions, alumni, and partners to enhance the overall study abroad experience.</p>
-							</div>
-                        
-                            
-                            <div class="text">
-								<h3>Empowerment through Education</h3>
-								<p>We believe in the transformative power of education. Our goal is to empower students by providing access to quality education, equipping them with the knowledge and skills necessary for personal and professional success</p>
-							</div>
+              <div class="text">
+                <h5>Academic Guidance</h5>
+                <p>In-depth advice on selecting courses, colleges, and universities globally. Guaranteed admission in the best courses offered by top-tier institutions in selected countries</p>
+              </div>
 
-                            <div class="text">
-								<h3>Professional Customized Counseling</h3>
-								<p>Personalized counseling based on our extensive experience in International Student Programs. Tailored advice to match your academic goals, preferences, and career aspirations.</p>
-							</div>
-
-                            <div class="text">
-								<h3>Academic Guidance</h3>
-								<p>In-depth advice on selecting courses, colleges, and universities globally. Guaranteed admission in the best courses offered by top-tier institutions in selected countries</p>
-							</div>
-
-                            <div class="text">
-								<h3>Scholarship Assistance</h3>
-								<p>Dedicated assistance in identifying and applying for scholarships, grants, and financial aid opportunities. Maximizing your chances of securing additional funding for your education.</p>
-							</div>
-
-
-                        </div>
-
-					</div>
-				</div>
-				<!--End Services Details Content-->
-			</div>
-		</div>
-	</section>
-	<!--End Services Details-->
-
-
+              <div class="text">
+                <h5>Scholarship Assistance</h5>
+                <p>Dedicated assistance in identifying and applying for scholarships, grants, and financial aid opportunities. Maximizing your chances of securing additional funding for your education.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Services Details Content -->
+        <!-- Start Services Details Sidebar -->
+        <div class="col-xl-4 col-lg-4 core-values-d">
+          <div class="service-sidebar">
+            <!-- End Services Details Sidebar Single -->
+            <div class="sidebar-widget banner-widget">
+              <div class="widget-content" style="background-image: url({% static 'web/images/resource/contact.jpg' %});">
+                <div class="shape" style="background-image: url({% static 'web/images/resource/overlay-shape.png' %});"></div>
+                <div class="content-box">
+                  <h3>Discover the Edbrowse Advantage</h3>
+                  <a href="" class="theme-btn btn-style-one light"><span class="btn-title">Contact us</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Services Details Sidebar -->
+      </div>
+    </div>
+  </section>
+  <!-- End Services Details -->
 {% endblock %}

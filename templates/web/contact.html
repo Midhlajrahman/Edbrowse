@@ -1,118 +1,108 @@
-{% extends 'web/base.html' %} 
-{% load static %} 
+{% extends 'web/base.html' %}
+{% load static %}
 {% block content %}
-<!-- Start main-content -->
-<section class="page-title" style="background-image: url({% static 'web/images/background/page-title.jpg' %});">
+  <!-- Start main-content -->
+  <section class="page-title" style="background-image: url({% static 'web/images/background/page-title.jpg' %});">
     <div class="auto-container">
-        <div class="title-outer">
-            <h1 class="title">Contact Us</h1>
-            <ul class="page-breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li>Contact</li>
+      <div class="title-outer">
+        <h1 class="title">Contact Us</h1>
+        <ul class="page-breadcrumb">
+          <li>
+            <a href="{% url 'web:index' %}">Home</a>
+          </li>
+          <li>Contact</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- end main-content -->
+
+  <!-- Contact Details Start -->
+  <section class="contact-details">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-7 col-lg-6">
+          <div class="sec-title">
+            <span class="sub-title">Reach us</span>
+            <h2>Feel free to write</h2>
+          </div>
+          <!-- Contact Form -->
+          <form id="contact_form contact-form" name="contact_form " class="form contact contact-form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="mb-3">{{ form.name }}</div>
+              </div>
+              <div class="col-sm-6">
+                <div class="mb-3">{{ form.email }}</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="mb-3">{{ form.subject }}</div>
+              </div>
+              <div class="col-sm-6">
+                <div class="mb-3">{{ form.phone }}</div>
+              </div>
+            </div>
+            <div class="mb-3">{{ form.message }}</div>
+            <div class="mb-3">
+              <button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait..."><span class="btn-title">Send message</span></button>
+              <button type="reset" class="theme-btn btn-style-one bg-theme-color5"><span class="btn-title">Reset</span></button>
+            </div>
+          </form>
+          <!-- Contact Form Validation -->
+        </div>
+        <div class="col-xl-5 col-lg-6">
+          <div class="contact-details__right">
+            <div class="sec-title">
+              <span class="sub-title">Need any help?</span>
+              <h2>Get in touch with us</h2>
+              <div class="text">Have more questions? Feel free to reach out, and we'll be happy to assist you on your educational journey!</div>
+            </div>
+            <ul class="list-unstyled contact-details__info">
+              <li>
+                <div class="icon bg-theme-color2">
+                  <span class="lnr-icon-phone-plus"></span>
+                </div>
+                <div class="text">
+                  <h6>Have any question?</h6>
+                  <a href="tel:980089850"><span>Free</span> +92 (020)-9850</a>
+                </div>
+              </li>
+              <li>
+                <div class="icon">
+                  <span class="lnr-icon-envelope1"></span>
+                </div>
+                <div class="text">
+                  <h6>Write email</h6>
+                  <a href="mailto:crm@edbrowse.com">crm@edbrowse.com</a>
+                </div>
+              </li>
+              <li>
+                <div class="icon">
+                  <span class="lnr-icon-location"></span>
+                </div>
+                <div class="text">
+                  <h6>Visit anytime</h6>
+                  <span>edbrowse kerala, india</span>
+                </div>
+              </li>
             </ul>
+          </div>
         </div>
+      </div>
     </div>
-</section>
-<!-- end main-content -->
+  </section>
+  <!-- Contact Details End -->
 
-<!--Contact Details Start-->
-<section class="contact-details">
-    <div class="container ">
-        <div class="row">
-            <div class="col-xl-7 col-lg-6">
-                <div class="sec-title">
-                    <span class="sub-title">Reach us</span>
-                    <h2>Feel free to write</h2>
-                </div>
-                <!-- Contact Form -->
-                <form id="contact_form contact-form" name="contact_form " class="form contact" method="post" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="mb-3">
-                                {{form.name}}
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="mb-3">
-                                {{form.email}}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="mb-3">
-                                {{form.subject}}
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="mb-3">
-                                {{form.phone}}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        {{form.message}}
-                    </div>
-                    <div class="mb-3">
-                        <button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait..."><span class="btn-title">Send message</span></button>
-                        <button type="reset" class="theme-btn btn-style-one bg-theme-color5"><span class="btn-title">Reset</span></button>
-                    </div>
-                </form>
-                <!-- Contact Form Validation-->
-            </div>
-            <div class="col-xl-5 col-lg-6">
-                <div class="contact-details__right">
-                    <div class="sec-title">
-                        <span class="sub-title">Need any help?</span>
-                        <h2>Get in touch with us</h2>
-                        <div class="text">Have more questions? Feel free to reach out, and we'll be happy to assist you on your educational journey!
-                        </div>
-                    </div>
-                    <ul class="list-unstyled contact-details__info">
-                        <li>
-                            <div class="icon bg-theme-color2">
-                                <span class="lnr-icon-phone-plus"></span>
-                            </div>
-                            <div class="text">
-                                <h6>Have any question?</h6>
-                                <a href="tel:980089850"><span>Free</span> +92 (020)-9850</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="icon">
-                                <span class="lnr-icon-envelope1"></span>
-                            </div>
-                            <div class="text">
-                                <h6>Write email</h6>
-                                <a href="mailto:needhelp@company.com">needhelp@company.com</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="icon">
-                                <span class="lnr-icon-location"></span>
-                            </div>
-                            <div class="text">
-                                <h6>Visit anytime</h6>
-                                <span>66 broklyn golden street. New York</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--Contact Details End-->
-
-<!-- Divider: Google Map -->
-<section>
+  <!-- Divider: Google Map -->
+  <section>
     <div class="container-fluid p-0">
-        <div class="row">
-            <!-- Google Map HTML Codes -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.843149788316!2d144.9537131159042!3d-37.81714274201087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sbn!2sbd!4v1583760510840!5m2!1sbn!2sbd" data-tm-width="100%" height="500" frameborder="0" allowfullscreen=""></iframe>
-        </div>
+      <div class="row">
+        <!-- Google Map HTML Codes -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.843149788316!2d144.9537131159042!3d-37.81714274201087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sbn!2sbd!4v1583760510840!5m2!1sbn!2sbd" data-tm-width="100%" height="500" frameborder="0" allowfullscreen=""></iframe>
+      </div>
     </div>
-</section>
-
+  </section>
 {% endblock %}

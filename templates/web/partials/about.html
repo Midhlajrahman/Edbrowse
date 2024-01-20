@@ -1,0 +1,39 @@
+{% load static %}
+<!-- About Section Three -->
+<section class="about-section-three pull-down">
+  <div class="bg"></div>
+  <div class="auto-container">
+    <div class="row">
+      <div class="content-column col-xl-6 col-lg-7 col-md-12 col-sm-12 order-2 wow fadeInRight" data-wow-delay="600ms">
+        <div class="inner-column">
+          <div class="sec-title">
+            <span class="sub-title">about the company</span>
+            <h2>Empowering Global Minds, <br />Building Future <span class="color3">Leaders</span></h2>
+            <div class="text">Welcome to Edbrowse, a trusted name in the realm of overseas education consultancy with a legacy spanning over 13 years. Our journey began with a vision to empower students to achieve their educational dreams, and today, we stand as a beacon of guidance and support in the field.</div>
+          </div>
+
+          <div class="bottom-box">
+            {% if request.path != '/about/' %}
+              <a href="{% url 'web:about' %}" class="theme-btn btn-style-one hvr-dark"><span class="btn-title">Explore More</span></a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Column -->
+      <div class="image-column col-xl-6 col-lg-5 col-md-12 col-sm-12">
+        <div class="inner-column">
+          <div class="image-box">
+            <figure class="image-1 overlay-anim wow fadeInRight">
+              <img src="{% static 'web/images/resource/about-7.jpg' %}" alt="" style="border-radius: 5px;" />
+            </figure>
+            <figure class="image-2 overlay-anim wow fadeInRight">
+              <img src="{% static 'web/images/resource/about-8.jpg' %}" alt="" style="border-radius: 5px;" />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Emd About Section Three -->

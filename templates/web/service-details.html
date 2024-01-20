@@ -1,97 +1,78 @@
-{% extends 'web/base.html' %} 
-{% load static %} 
+{% extends 'web/base.html' %}
+{% load static %}
 {% block content %}
-
-<!-- Start main-content -->
-<section class="page-title" style="background-image: url({{service_detail.cover_image.url}});">
+  <!-- Start main-content -->
+  <section class="page-title" style="background-image: url({{ service_detail.cover_image.url }});">
     <div class="auto-container">
-        <div class="title-outer">
-            <h4 class="title" style="font-size: 30px!important" >{{service_detail.service_name}}</h4>
-            <ul class="page-breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li>{{service_detail.service_name}}</li>
-            </ul>
-        </div>
+      <div class="title-outer">
+        <h4 class="title" style="font-size: 30px!important">{{ service_detail.service_name }}</h4>
+        <ul class="page-breadcrumb">
+          <li>
+            <a href="{% url 'web:index' %}l">Home</a>
+          </li>
+          <li>
+            <a href="#">Services</a>
+          </li>
+          <li>{{ service_detail.service_name }}</li>
+        </ul>
+      </div>
     </div>
-</section>
-<!-- end main-content -->
+  </section>
+  <!-- end main-content -->
 
-<!--Service Details Start-->
-<section class="blog-details course-font">
+  <!-- Service Details Start -->
+  <section class="blog-details course-font">
     <div class="container">
-        <div class="row">
-            <div class="col-xl-8 col-lg-7">
-                <div class="blog-details__left">
-
-					<div class="blog-details__img">
-                        <img src="{{service_detail.service_image.url}}" alt="">
-                    </div>
-
-                    <div class="blog-details__content">
-                        <h2 class="mt-4">{{service_detail.service_name}}</h2>
-
-						<div class="content">{{service_detail.content|safe}}</div>
-                          
-                        
-                    </div>
-
-                </div>
+      <div class="row">
+        <div class="col-xl-8 col-lg-7">
+          <div class="blog-details__left">
+            <div class="blog-details__img">
+              <img src="{{ service_detail.service_image.url }}" alt="" />
             </div>
-            <div class="col-xl-4 col-lg-5">
-                <div class="sidebar">
-                    
-                    <div class="sidebar__single sidebar__post">
-                        <h3 class="sidebar__title">Enquiry Form</h3>
-                        <!-- Contact Form -->
-					<form id="contact_form" name="contact_form" class="form service" method="post">
-                        {% csrf_token %}
-						<div class="row">
-							<div class="col-sm-6">
-								<div class="mb-3">
-									{{ form.full_name }}
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="mb-3">
-									{{form.email}}
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-12">
-								<div class="mb-3">
-									{{form.phone}}
-								</div>
-							</div>
-						</div>
-                        <div class="row">
-							<div class="col-sm-12">
-								<div class="mb-3">
-									{{form.service}}
-								</div>
-							</div>
-						</div>
-						<div class="mb-3">
-							{{form.message}}
-						</div>
-						<div class="mb-3">
-							<button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait..."><span class="btn-title">Submit</span></button>
-						</div>
-					</form>
-					<!-- Contact Form Validation-->
-                    </div>
-                    
-                   
-                    
-                </div>
+
+            <div class="blog-details__content">
+              <h2 class="mt-4">{{ service_detail.service_name }}</h2>
+
+              <div class="content">{{ service_detail.content|safe }}</div>
             </div>
+          </div>
         </div>
+        <div class="col-xl-4 col-lg-5">
+          <div class="sidebar">
+            <div class="contact-form">
+              <h3 class="sidebar__title">Enquiry Form</h3>
+              <!-- Contact Form -->
+              <form id="contact_form" name="contact_form" class="form service contact-form ajax reload" method="post">
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="mb-3">{{ form.full_name }}</div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="mb-3">{{ form.email }}</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="mb-3">{{ form.phone }}</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="mb-3">{{ form.service }}</div>
+                  </div>
+                </div>
+                <div class="mb-3">{{ form.message }}</div>
+                <div class="mb-3">
+                  <button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait..."><span class="btn-title">Submit</span></button>
+                </div>
+              </form>
+              <!-- Contact Form Validation -->
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
-<!--Service Details End-->
-
-
-
-
+  </section>
+  <!-- Service Details End -->
 {% endblock %}

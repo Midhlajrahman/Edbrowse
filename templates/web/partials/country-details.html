@@ -1,126 +1,107 @@
-{% extends 'web/base.html' %} 
-{% load static %} 
+{% extends 'web/base.html' %}
+{% load static %}
 {% block content %}
-
-<!-- Start main-content -->
-<section class="page-title" style="background-image: url({{country_detail.cover_image.url}});">
+  <!-- Start main-content -->
+  <section class="page-title" style="background-image: url({{ country_detail.cover_image.url }});">
     <div class="auto-container">
-        <div class="title-outer">
-            <h4 class="title" style="font-size: 40px!important" >{{country_detail.country_name}}</h4>
-            <ul class="page-breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Country</a></li>
-                <li>{{country_detail.country_name}}</li>
-            </ul>
-        </div>
+      <div class="title-outer">
+        <h4 class="title" style="font-size: 40px!important">{{ country_detail.country_name }}</h4>
+        <ul class="page-breadcrumb">
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="#">Country</a>
+          </li>
+          <li>{{ country_detail.country_name }}</li>
+        </ul>
+      </div>
     </div>
-</section>
-<!-- end main-content -->
+  </section>
+  <!-- end main-content -->
 
-<!--Blog Details Start-->
-<section class="blog-details">
+  <!-- Blog Details Start -->
+  <section class="blog-details">
     <div class="container">
-        <div class="row">
-            <div class="col-xl-8 col-lg-7">
-                <div class="blog-details__left">
-                    
-                    <div class="blog-details__content">
-                        <h3 class="blog-details__title">{{country_detail.tag_line}}</h3>     
-                    </div>
-
-                    <div>
-                        <p>
-                            {{country_detail.content|safe}}
-                        </p> 
-                    </div>
-                    
-                  
-                </div>
+      <div class="row">
+        <div class="col-xl-8 col-lg-7">
+          <div class="blog-details__left">
+            <div class="blog-details__content">
+              <h3 class="blog-details__title">{{ country_detail.tag_line }}</h3>
             </div>
-            <div class="col-xl-4 col-lg-5">
-                <div class="sidebar">
-                    
-                    <div class="sidebar__single sidebar__post">
-                        <h3 class="sidebar__title">Enquiry Form</h3>
-                        <!-- Contact Form -->
-					<form id="contact_form" name="contact_form" class="form contact" method="post">
-                        {% csrf_token %}
-                        <div class="row">
-							<div class="col-sm-6">
-								<div class="mb-3">
-                                    {{form.name}}
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="mb-3">
-									{{form.email}}
-								</div>
-							</div>
-						</div>
-                        <div class="row">
-							<div class="col-sm-6">
-								<div class="mb-3">
-                                    {{form.subject}}
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="mb-3">
-                                    {{form.phone}}
-								</div>
-							</div>
-						</div>
-						
-						<div class="mb-3">
-							{{form.message}}
-						</div>
-
-						<div class="mb-3">
-							<input name="form_botcheck" class="form-control" type="hidden" value="" />
-							<button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait..."><span class="btn-title">Send message</span></button>
-							<button type="reset" class="theme-btn btn-style-one bg-theme-color5"><span class="btn-title">Reset</span></button>
-						</div>
-					</form>
-					<!-- Contact Form Validation-->
-                    </div>
-                    
-                   
-                    
-                </div>
+            <div>
+              <p>{{ country_detail.content|safe }}</p>
             </div>
+          </div>
         </div>
+        <div class="col-xl-4 col-lg-5">
+          <div class="sidebar">
+            <div class="sidebar__single sidebar__post">
+              <h3 class="sidebar__title">Enquiry Form</h3>
+              <!-- Contact Form -->
+              <form id="contact_form" name="contact_form" class="form contact" method="post">
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="mb-3">{{ form.name }}</div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="mb-3">{{ form.email }}</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="mb-3">{{ form.subject }}</div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="mb-3">{{ form.phone }}</div>
+                  </div>
+                </div>
+                <div class="mb-3">{{ form.message }}</div>
+                <div class="mb-3">
+                  <input name="form_botcheck" class="form-control" type="hidden" value="" />
+                  <button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait..."><span class="btn-title">Send message</span></button>
+                  <button type="reset" class="theme-btn btn-style-one bg-theme-color5"><span class="btn-title">Reset</span></button>
+                </div>
+              </form>
+              <!-- Contact Form Validation -->
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
-<!--Blog Details End-->
+  </section>
+  <!-- Blog Details End -->
 
-<!-- Testimonial Section -->
-<section class="bg-silver-light">
+  <!-- Testimonial Section -->
+  <section class="bg-silver-light">
     <div class="container pb-90">
-        <div class="row">
-            {% for testimonial in testimonials %}
-            <div class="col-lg-4 col-md-6 col-sm-12">
-                <!-- Testimonial Block -->
-                <div class="testimonial-block mb-md-30">
-                    <div class="inner-box">
-                        <div class="content-box">
-                            <span class="icon fa fa-quote-left"></span>
-                            <div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                            <div class="text">{{testimonial.description}}</div>
-                        </div>
-                        <div class="info-box">
-                            <figure class="thumb"><img src="{{testimonial.photo.url}}" alt=""></figure>
-                            <h6 class="name text-black">{{testimonial.name}}</h6>
-                            <span class="designation">{{testimonial.designation}}</span>
-                        </div>
-                    </div>
+      <div class="row">
+        {% for testimonial in testimonials %}
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <!-- Testimonial Block -->
+            <div class="testimonial-block mb-md-30">
+              <div class="inner-box">
+                <div class="content-box">
+                  <span class="icon fa fa-quote-left"></span>
+                  <div class="rating">
+                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                  </div>
+                  <div class="text">{{ testimonial.description }}</div>
                 </div>
+                <div class="info-box">
+                  <figure class="thumb">
+                    <img src="{{ testimonial.photo.url }}" alt="" />
+                  </figure>
+                  <h6 class="name text-black">{{ testimonial.name }}</h6>
+                  <span class="designation">{{ testimonial.designation }}</span>
+                </div>
+              </div>
             </div>
-            {% endfor %}
-        </div>
+          </div>
+        {% endfor %}
+      </div>
     </div>
-</section>
-<!-- End Testimonial Section -->
-
-
-
-
+  </section>
+  <!-- End Testimonial Section -->
 {% endblock %}
