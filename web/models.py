@@ -157,7 +157,7 @@ class Contact(models.Model):
         return str(self.name)
 
 
-class Enquiry(models.Model):
+class CourseEnquiry(models.Model):
     full_name = models.CharField(max_length=250)
     email = models.EmailField(max_length=250)
     phone = models.CharField(max_length=250)
@@ -178,9 +178,11 @@ class Enquiry(models.Model):
 
     message = models.CharField(max_length=100, blank=True, null=True)
     source = models.CharField(max_length=100, blank=True, null=True)
+    
+    course_name = models.ForeignKey("web.Course", on_delete=models.CASCADE,blank=True,null=True)
 
     class Meta:
-        verbose_name_plural = "Enquiries"
+        verbose_name_plural = "Course Enquiries"
 
     def __str__(self):
         return str(self.full_name)
@@ -189,8 +191,8 @@ class Enquiry(models.Model):
 class ServiceEnquiry(models.Model):
     full_name = models.CharField(max_length=250)
     email = models.EmailField(max_length=250)
-    phone = models.CharField(max_length=250)
-    service = models.CharField(max_length=250)
+    phone = models.IntegerField()
+    service_name = models.ForeignKey("web.Service", on_delete=models.CASCADE,blank=True,null=True)
     message = models.TextField()
 
     class Meta:
@@ -204,7 +206,7 @@ class EventEnquiry(models.Model):
     full_name = models.CharField(max_length=250)
     email = models.EmailField(max_length=250)
     phone = models.CharField(max_length=250)
-    event = models.CharField(max_length=250)
+    event = models.ForeignKey("web.Event", on_delete=models.CASCADE,blank=True,null=True)
 
     class Meta:
         verbose_name_plural = "Event Enquiries"
@@ -267,3 +269,16 @@ class Alumini(models.Model):
 
     def get_absolute_url(self):
         return reverse("web:alumini_details", kwargs={"slug": self.slug})
+
+
+class CountryEnquiry(models.Model):
+    name = models.CharField(max_length=250)
+    email = models.EmailField(max_length=250)
+    phone = models.CharField(max_length=250)
+    subject = models.CharField(max_length=250)
+    message = models.TextField()
+    country_name = models.ForeignKey("web.Country", on_delete=models.CASCADE,blank=True,null=True)
+    
+    def __str__(self):
+        return self.name
+    

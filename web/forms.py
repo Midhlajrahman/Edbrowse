@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Contact, Enquiry, EventEnquiry, ServiceEnquiry
+from .models import Contact, CourseEnquiry, EventEnquiry, ServiceEnquiry, CountryEnquiry
 
 
 class ContactForm(forms.ModelForm):
@@ -34,10 +34,40 @@ class ContactForm(forms.ModelForm):
         }
 
 
-class EnquiryForm(forms.ModelForm):
+class CountryForm(forms.ModelForm):
     class Meta:
-        model = Enquiry
-        exclude = ()
+        model = CountryEnquiry
+        exclude = ("country_name",)
+
+        widgets = {
+            "name": forms.TextInput(
+                attrs={"class": "form-control", "placeholder": "Full Name"}
+            ),
+            "email": forms.EmailInput(
+                attrs={
+                    "class": "form-control required email",
+                    "placeholder": "Enter Email",
+                }
+            ),
+            "subject": forms.TextInput(
+                attrs={"class": "form-control required", "placeholder": "Enter Subject"}
+            ),
+            "phone": forms.TextInput(
+                attrs={"class": "form-control", "placeholder": "Enter Phone"}
+            ),
+            "message": forms.Textarea(
+                attrs={
+                    "class": "form-control required",
+                    "rows": 5,
+                    "placeholder": "Enter Message",
+                }
+            ),
+        }
+
+class CourseEnquiryForm(forms.ModelForm):
+    class Meta:
+        model = CourseEnquiry
+        exclude = ("course_name",)
 
         widgets = {
             "full_name": forms.TextInput(
@@ -144,7 +174,8 @@ class EnquiryForm(forms.ModelForm):
 class ServiceEnquiryForm(forms.ModelForm):
     class Meta:
         model = ServiceEnquiry
-        exclude = ()
+        exclude = ("service",)
+        
 
         widgets = {
             "full_name": forms.TextInput(
@@ -153,30 +184,23 @@ class ServiceEnquiryForm(forms.ModelForm):
             "email": forms.EmailInput(
                 attrs={"class": "form-control required email", "placeholder": "Email"}
             ),
-            "phone": forms.TextInput(
+            "phone": forms.NumberInput(
                 attrs={"class": "form-control", "placeholder": "Phone"}
             ),
-            "service": forms.TextInput(
+           "message": forms.Textarea(
                 attrs={
-                    "class": "form-control",
-                    "placeholder": "Service",
-                    "readonly": "readonly",
+                    "class": "form-control required",
+                    "rows": 5,
+                    "placeholder": "Enter Message",
                 }
             ),
-            "message": forms.TextInput(
-                attrs={"class": "form-control", "placeholder": "Message"}
-            ),
         }
-
-    def __init__(self, service, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields["service"].initial = service
 
 
 class EventEnquiryForm(forms.ModelForm):
     class Meta:
         model = EventEnquiry
-        exclude = ()
+        exclude = ("event",)
 
         widgets = {
             "full_name": forms.TextInput(
@@ -188,15 +212,5 @@ class EventEnquiryForm(forms.ModelForm):
             "phone": forms.TextInput(
                 attrs={"class": "form-control", "placeholder": "Phone"}
             ),
-            "event": forms.TextInput(
-                attrs={
-                    "class": "form-control",
-                    "placeholder": "Event",
-                    "readonly": "readonly",
-                }
-            ),
+            
         }
-
-    def __init__(self, event, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields["event"].initial = event

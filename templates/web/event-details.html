@@ -41,20 +41,21 @@
                 </div>
             </div>
             <div class="col-xl-4 col-lg-5">
-                <div class="sidebar">
+                <div class="sidebar ">
                     
-                    <div class="sidebar__single sidebar__post">
-                        <h3 class="sidebar__title">Register for Event</h3>
+                    <div class="sidebar__single sidebar__post ">
                         <!-- Contact Form -->
-					<form id="contact_form" name="contact_form" class="form event" method="post">
+					<form id="contact_form" name="contact_form" class="t contact-form" method="POST">
                         {% csrf_token %}
+                        <h3 class="sidebar__title">Register for Event</h3>
+
 						<div class="row">
-							<div class="col-sm-6">
+							<div class="col-sm-12">
 								<div class="mb-3">
 									{{ form.full_name }}
 								</div>
 							</div>
-							<div class="col-sm-6">
+							<div class="col-sm-12">
 								<div class="mb-3">
 									{{form.email}}
 								</div>
@@ -72,10 +73,12 @@
                         <div class="row">
 							<div class="col-sm-12">
 								<div class="mb-3">
-									{{form.event}}
+									<input type="text" value="{{event_detail.title}}" class="form-control" readonly>
 								</div>
 							</div>
 						</div>
+
+                       
                         
                         
 						<div class="mb-3">

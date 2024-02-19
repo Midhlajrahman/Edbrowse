@@ -7,7 +7,7 @@ from .models import (
     Country,
     CountryFeature,
     Course,
-    Enquiry,
+    CourseEnquiry,
     Event,
     EventEnquiry,
     Faq,
@@ -16,6 +16,7 @@ from .models import (
     ServiceEnquiry,
     SubCourse,
     Testimonial,
+    CountryEnquiry
 )
 
 # Register your models here.
@@ -74,8 +75,8 @@ class ContactAdmin(admin.ModelAdmin):
     list_display = ("name",)
 
 
-@admin.register(Enquiry)
-class EnquiryAdmin(admin.ModelAdmin):
+@admin.register(CourseEnquiry)
+class CourseEnquiryAdmin(admin.ModelAdmin):
     list_display = ("full_name",)
 
 
@@ -108,3 +109,8 @@ class GalleryAdmin(admin.ModelAdmin):
 class AluminiAdmin(admin.ModelAdmin):
     list_display = ("name",)
     prepopulated_fields = {"slug": ("name",)}
+
+
+@admin. register(CountryEnquiry)
+class CountryEnquiryAdmin(admin.ModelAdmin):
+    list_display = ("name",)

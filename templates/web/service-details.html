@@ -42,7 +42,7 @@
             <div class="contact-form">
               <h3 class="sidebar__title">Enquiry Form</h3>
               <!-- Contact Form -->
-              <form id="contact_form" name="contact_form" class="form service contact-form ajax reload" method="post">
+              <form id="contact_form" name="contact_form" class="form  contact-form " method="post">
                 {% csrf_token %}
                 <div class="row">
                   <div class="col-sm-12">
@@ -58,11 +58,8 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-sm-12">
-                    <div class="mb-3">{{ form.service }}</div>
-                  </div>
-                </div>
                 <div class="mb-3">{{ form.message }}</div>
+                </div>
                 <div class="mb-3">
                   <button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait..."><span class="btn-title">Submit</span></button>
                 </div>
